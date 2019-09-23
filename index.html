@@ -17,41 +17,55 @@
 </head>
 
 <body>
-    <figure class="logo">
-        <img src="./assets/images/logo" alt="Logo">
-    </figure>
-    <div class="center">
-        <h1>Welcome to LearnPy!</h1>
-        <h2>The best way to learn Python!</h2>
-    </div>
-    <div class="learn">
-        <p id="block">Learn the basics of Python with our easy, yet comprehensive tutorial!</p>
-        <img src="./assets/images/python.jpg">
-    </div>
-    <div class="test">
-        <p>Test your knowledge by taking a comprehensive quiz!</p>
-        <img scr="./assets/images/Quiz.png">
-    </div>
+    <section id="top">
+        <figure class="logo">
+            <img src="./assets/images/logo.png" alt="Logo">
+        </figure>
+        <div class="center">
+            <h1>Welcome to LearnPy!</h1>
+            <h2>The best way to learn Python!</h2>
+        </div>
+    </section>
+    <div id="spacer"></div>
+    <section id="item1">
+        <div class="spacer-s2"></div>
+        <div id="trigger1" class="spacer s0"></div>
+        <div id="reveal1" class="learn">
+            <p>Learn the basics of Python with our easy, yet comprehensive tutorial!</p>
+            <img src="./assets/images/python.jpg">
+        </div>
+    </section>
+    <section id="item2">
+        <div id="trigger2" class="spacer s0"></div>
+        <div class="spacer-s2"></div>
+        <div id="reveal2" class="learn">
+            <p>Test your knowledge by taking a comprehensive quiz!</p>
+            <img src="./assets/images/Quiz.png">
+        </div>
+    </section>
     <script>
-        $(function () {
-            var controller = new ScrollMagic.Controller();
-            var containerSceneLearn = new ScrollMagic.Scene({
-                triggerElement: '.learn',
-                duration: 400
-            })
-            .setPin('.learn')
-            .addIndicators()
+        var controller = new ScrollMagic.Controller();// build scene
+        new ScrollMagic.Scene({
+            triggerElement: "#trigger1",
+            triggerHook: 0.9, // show, when scrolled 10% into view
+            duration: "60%", // hide 10% before exiting view (80% + 10% from bottom)
+            offset: 50 // move trigger to center of element
+        })
+            .setClassToggle("#reveal1", "visible") // add class to reveal
+            .addIndicators() // add indicators (requires plugin)
             .addTo(controller);
-            var containerSceneTest = new ScrollMagic.Scene({
-                triggerElement: '.test',
-                duration: 400
-            })
-            .setPin('.test')
-            .addIndicators()
-            .addTo(controller);
-        });
 
+        new ScrollMagic.Scene({
+            triggerElement: "#trigger2",
+            triggerHook: 0.9, // show, when scrolled 10% into view
+            duration: "60%", // hide 10% before exiting view (80% + 10% from bottom)
+            offset: 50 // move trigger to center of element
+        })
+            .setClassToggle("#reveal2", "visible") // add class to reveal
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
     </script>
+
 </body>
 
 </html>
