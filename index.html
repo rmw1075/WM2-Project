@@ -32,15 +32,23 @@
         <div id="trigger1" class="spacer s0"></div>
         <div id="reveal1" class="learn">
             <p>Learn the basics of Python with our easy, yet comprehensive tutorial!</p>
-            <img src="./assets/images/python.png">
+            <a href="pages/learn.html"><img src="./assets/images/python.png"></a>
         </div>
     </section>
     <section id="item2">
         <div id="trigger2" class="spacer s0"></div>
         <div class="spacer-s2"></div>
-        <div id="reveal2" class="learn">
-            <p>Test your knowledge by taking a comprehensive quiz!</p>
-            <img src="./assets/images/Quiz.png">
+        <div id="reveal2" class="test">
+            <p>Feeling smart? Test your knowledge by taking our comprehensive quiz!</p>
+            <a href="pages/quiz.html"><img src="./assets/images/Quiz.png"></a>
+        </div>
+    </section>
+    <section id="item3">
+        <div id="trigger3" class="spacer s0"></div>
+        <div class="spacer-s2"></div>
+        <div id="reveal3" class="ask">
+            <p>Stuck on a concept? Get help from our friendly tutors!</p>
+            <a href="pages/help.html"><img src="./assets/images/help.png"></a>
         </div>
     </section>
     <script>
@@ -48,7 +56,7 @@
         new ScrollMagic.Scene({
             triggerElement: "#trigger1",
             triggerHook: 0.9, // show, when scrolled 10% into view
-            duration: "60%", // hide 10% before exiting view (80% + 10% from bottom)
+            // duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
             offset: 50 // move trigger to center of element
         })
             .setClassToggle("#reveal1", "visible") // add class to reveal
@@ -58,10 +66,20 @@
         new ScrollMagic.Scene({
             triggerElement: "#trigger2",
             triggerHook: 0.9, // show, when scrolled 10% into view
-            duration: "60%", // hide 10% before exiting view (80% + 10% from bottom)
+            // duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
             offset: 50 // move trigger to center of element
         })
             .setClassToggle("#reveal2", "visible") // add class to reveal
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+
+        new ScrollMagic.Scene({
+            triggerElement: "#trigger3",
+            triggerHook: 0.9, // show, when scrolled 10% into view
+            // duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+            offset: 50 // move trigger to center of element
+        })
+            .setClassToggle("#reveal3", "visible") // add class to reveal
             .addIndicators() // add indicators (requires plugin)
             .addTo(controller);
     </script>
