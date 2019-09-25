@@ -16,10 +16,10 @@ body {
 
 .half2 img {
     display: block;
-
     margin-right: auto;
     margin-left: auto;
     height: 100%;
+    margin-bottom: 0px;
 }
 
 .logo {
@@ -27,6 +27,7 @@ body {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 0px;
 }
 
 .logo img {
@@ -48,10 +49,13 @@ body {
 
 .center h1 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 6em;
+    font-size: 5.6em;
     margin-bottom: 0;
 }
-
+.center h2{
+    margin-top: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+}
 #item1, #item2, #item3 {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
@@ -115,6 +119,27 @@ body {
     transform: none;
 }
 
+#item1 img:hover{
+	-webkit-transform:scale(1.12);
+	-moz-transform:scale(1.12);
+	-ms-transform:scale(1.12);
+	-o-transform:scale(1.12);
+	transform:scale(1.12);
+}
+#item2 img:hover{
+	-webkit-transform:scale(1.12);
+	-moz-transform:scale(1.12);
+	-ms-transform:scale(1.12);
+	-o-transform:scale(1.12);
+	transform:scale(1.12);
+}
+#item3 img:hover{
+	-webkit-transform:scale(1.12);
+	-moz-transform:scale(1.12);
+	-ms-transform:scale(1.12);
+	-o-transform:scale(1.12);
+	transform:scale(1.12);
+}
 #spacer {
     height: 70px;
 }
