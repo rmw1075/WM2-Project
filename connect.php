@@ -1,7 +1,7 @@
 <?php
 $path = './';
 $page = 'Order Reciept';
-require $path . './dbconnect.inc';
+require $path . './inc/database/dbconnect_rmw.inc';
 ?>
 
 
