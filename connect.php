@@ -1,7 +1,8 @@
 <?php
 $path = './';
 $page = 'Order Reciept';
-require $path . './inc/database/dbconnect_rmw.inc';
+// require $path . './inc/database/dbconnect_rmw.inc';
+require $path . './inc/database/dbconnect_lab.inc';
 ?>
 
 
@@ -14,6 +15,19 @@ require $path . './inc/database/dbconnect_rmw.inc';
     <title>Backend Test</title>
 </head>
 <body>
+    <h1>Login</h1>
+    <form id="login">
+      <input type="text" name="userID" /><br>
+      <input type="text" name="name" /><br />
+      <input type="text" name="password1" /><br />
+      <input type="text" name="password2" /><br />
+      <input type="text" name="email" /><br />
+      <section name="role">
+        <input type="checkbox" name="role" value="Instructor" /><br />
+        <input type="checkbox" name="role" value="Student" /><br />
+      </section>
+
+    </form>
     <?php
       $sql = "SELECT answer FROM quiz where question=1";
       $res = mysqli_query($mysqli, $sql);

@@ -22,15 +22,15 @@ SET time_zone = "+00:00";
 -- Database: `rmw1075`
 --
 
-DROP DATABASE IF EXISTS rmw1075;
-CREATE DATABASE rmw1075;
+-- DROP DATABASE IF EXISTS rmw1075;
+-- CREATE DATABASE rmw1075;
 USE rmw1075;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `quiz`
 --
-
+DROP TABLE IF EXISTS quiz;
 CREATE TABLE `quiz` (
   `qnum` int(20) UNSIGNED NOT NULL,
   `question` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -68,6 +68,7 @@ ALTER TABLE `quiz`
 
 
 -- Create quiz table
+DROP TABLE IF EXISTS answers;
 CREATE TABLE `answers` (
   `qnum` int(20) UNSIGNED NOT NULL,
   `correct` char(1) COLLATE utf8_unicode_ci NOT NULL,
