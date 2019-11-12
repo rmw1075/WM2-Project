@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true){
-    header("location: loginstudent.php");
+    header("location: loginpage.php");
     exit;
 }
 ?>
@@ -21,11 +21,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true){
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["name"]); ?></b>. Welcome to our site.</h1>
     </div>
     <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    <?php
+    if($_SESSION["role"] == "Instructor"){
+    ?>
+    <a href="assets/php/results.php" class="btn btn-warning">View scores</a>
+    <?php } ?>
+    <a href="assets/php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>
 </body>
 </html>

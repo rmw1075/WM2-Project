@@ -1,11 +1,11 @@
 <?php
 $path = './';
 $page = 'Comment Submitted';
-require $path . '../../inc/database/dbconnect_rmw.inc';
+require $path . '../../inc/database/dbconnect.inc';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,6 @@ require $path . '../../inc/database/dbconnect_rmw.inc';
 </head>
 
 <body>
-    <h2>Your Account has been created!</h2>
-    <button><a href="../../login.php">Login</a></button>
 	<?php
 	// Grab form data, validate and interact with database
 
@@ -42,12 +40,12 @@ require $path . '../../inc/database/dbconnect_rmw.inc';
 	$stmt->bind_param("sssss", $userID, $name, $password1, $email, $role);
 	$stmt->execute();
     ?>
-
-
-	<!-- Close database connection -->
-	<?php
-	mysqli_close($mysqli);
-	?>
+    <h2>Your Account has been created!</h2>
+    <button><a href="../../loginpage.php">Login</a></button>
 </body>
-
 </html>
+
+<!-- Close database connection -->
+<?php
+mysqli_close($mysqli);
+?>
