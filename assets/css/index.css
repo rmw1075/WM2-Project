@@ -6,6 +6,13 @@ body {
     height: 100vh;
 }
 
+#login, #login img {
+    float: right;
+    clear: left;
+    max-height: 40px;
+    max-width: 40px;
+}
+
 .half1 {
     height: 40%;
 }
