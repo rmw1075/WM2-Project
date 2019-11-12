@@ -34,8 +34,8 @@ require $path . '../../inc/database/dbconnect.inc';
     $password1 = test_input($_POST['password1']);
     $password2 = test_input($_POST['password2']);
     $email = test_input($_POST['email']);
-    $role = test_input($_POST['role']);
-
+	$role = test_input($_POST['role']);
+	
     $stmt = $mysqli->prepare("INSERT INTO rmw1075.users(userID, `name`, `password`, email, `role`) VALUES (?, ?, ?, ?, ?)");
 	$stmt->bind_param("sssss", $userID, $name, $password1, $email, $role);
 	$stmt->execute();
