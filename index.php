@@ -4,9 +4,9 @@ session_start();
 $dropdowns = "";
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-    $drophtml="<a>Hello, ".$_SESSION["userID"]."!</a>";
+    $drophtml="<a>Hi, ".$_SESSION["name"]."!</a>";
     if ($_SESSION["role"] == "Instructor"){
-        $drophtml .= "<a href=\"./assets/php/results.php\">View Scores</a>";
+        $drophtml .= "<a href=\"./assets/php/instructor.php\">View Scores</a>";
     } else {
         $drophtml .= "<a href=\"./assets/php/results.php\">View Your Scores</a>";
     }
