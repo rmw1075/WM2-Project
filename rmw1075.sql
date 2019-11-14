@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `rmw1075`;
+CREATE DATABASE  IF NOT EXISTS `rmw1075` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `rmw1075`;
--- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
 -- Host: localhost    Database: rmw1075
 -- ------------------------------------------------------
--- Server version	8.0.18
+-- Server version	5.7.27-0ubuntu0.18.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,14 +23,14 @@ USE `rmw1075`;
 
 DROP TABLE IF EXISTS `quiz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quiz` (
   `qnum` int(20) unsigned NOT NULL AUTO_INCREMENT,
   `question` mediumtext COLLATE utf8_unicode_ci,
-  `correct` varchar(600) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option2` varchar(600) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option3` varchar(600) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option4` varchar(600) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `correct` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `option2` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `option3` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `option4` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`qnum`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,14 +51,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `results`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `results` (
-  `userID` varchar(7) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `userID` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   `quizDate` datetime DEFAULT NULL,
-  `qOrder` blob,
-  `answerOrder` blob,
-  `chosen` blob,
-  `score` decimal(3,0) DEFAULT NULL
+  `qOrder` tinytext COLLATE utf8_unicode_ci,
+  `answerOrder` tinytext COLLATE utf8_unicode_ci,
+  `chosen` tinytext COLLATE utf8_unicode_ci,
+  `score` decimal(5,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -68,7 +68,7 @@ CREATE TABLE `results` (
 
 LOCK TABLES `results` WRITE;
 /*!40000 ALTER TABLE `results` DISABLE KEYS */;
-INSERT INTO `results` VALUES ('abc1234','2019-11-07 11:24:46',NULL,NULL,NULL,87);
+INSERT INTO `results` VALUES ('abc1234','2019-11-07 11:24:46',NULL,NULL,NULL,87.00);
 /*!40000 ALTER TABLE `results` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,12 +78,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `userID` varchar(7) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `userID` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-12 23:34:21
+-- Dump completed on 2019-11-13 20:48:19
