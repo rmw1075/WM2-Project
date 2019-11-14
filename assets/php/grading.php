@@ -14,6 +14,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
 ?>
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 for ($a = 0; $a < count($_SESSION["qorder"]); $a++){
     echo $_SESSION["qorder"][$a];
 }
@@ -41,7 +43,7 @@ for ($a = 0; $a < count($questionOrder); $a++) {
         }
     }
 }
-
+$mysqli->close();
 $total = eval('return '.$correctTotal."/".count($questionOrder).';');
 $date = date('Y-m-d H:i:s');
 echo "Here 2";
@@ -54,9 +56,14 @@ echo "Here3";
 
 // An error is being thrown here : binding_error
 try {
-    $stmt = $mysqli->prepare("INSERT INTO rmw1075.results(userID, quizDate, qOrder, answerOrder, chosen, score) VALUES (:userID, :quizDate, :qOrder, :answerOrder, :chosen, :score)");
+    include($path . '../../inc/database/dbconnect.inc');
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+     }
+    echo "Connected successfully";
+    $stmt = $mysqli->prepare("INSERT INTO results VALUES (:userID, :quizDate, :qOrder, :answerOrder, :chosen, :score)");
     $naame = $_SESSION["userID"];
-    $stmt->bind_param(":userID", $naame);
+    $stmt->bind_param(':userID', $naame);
     echo "TEEEEEST";
     $stmt->bind_param(":quizDate", $date);
     $stmt->bind_param(":qOrder", implode(',', $questionOrder));
@@ -65,6 +72,7 @@ try {
     $stmt->bind_param(":score", $total);
     $stmt->execute();
     $stmt->close();
+    $mysqli->close();
     echo "Here4";  
 } catch(Exception $e) {
     echo "Error: " . $e->getMessage();
