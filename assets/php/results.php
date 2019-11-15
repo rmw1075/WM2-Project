@@ -24,7 +24,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
     </style>
 </head>
 <body>
-    <h1>Result</h1>
+    <h1>Your Quiz Result: </h1>
     <table>
         <tr>
             <th>userID</th>
