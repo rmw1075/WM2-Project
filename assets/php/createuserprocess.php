@@ -1,7 +1,7 @@
 <?php
 $path = './';
 $page = 'Comment Submitted';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +10,7 @@ require $path . '../../inc/database/dbconnect.inc';
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="./commentprocess.css">
-	<script src="process.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/commentprocess.css">
 	<title>Create User</title>
 </head>
 
@@ -41,7 +40,7 @@ require $path . '../../inc/database/dbconnect.inc';
 	$stmt->execute();
     ?>
     <h2>Your Account has been created!</h2>
-    <button><a href="../../loginpage.php">Login</a></button>
+    <button><a href="./loginpage.php">Login</a></button>
 </body>
 </html>
 

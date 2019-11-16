@@ -1,12 +1,12 @@
 <?php
 $path = './';
 $page = 'Results';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 <?php
 session_start();
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
-    header("location: ../../loginpage.php");
+    header("location: ./loginpage.php");
     exit;
 }
 ?>
@@ -42,7 +42,12 @@ function showStudent(str) {
 </style>
 </head>
 <body>
-
+    <?php
+    $path = './';
+    $page = 'Instructor Page';
+    include $path . '../inc/header.php';
+    ?>
+    <br />
 <form>
 <select name="students" onchange="showStudent(this.value)">
   <option value="" selected>Select a person:</option>

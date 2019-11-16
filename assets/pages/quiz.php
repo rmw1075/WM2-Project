@@ -1,21 +1,25 @@
 <?php
 $path = './';
 $page = 'Quiz';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 <?php
 // Initialize the session
 session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
-    header("location: ../../loginpage.php");
+    header("location: ../php/loginpage.php");
     exit;
 }
+
+$path = './';
+$page = 'Quiz';
+include $path . '../inc/header.php';
 ?>
 <?php
-if ($_SESSION) {
+if ($_SESSION["quiz"] == "taken") {
     echo "<h1>You have already taken the quiz.</h1>";
-    echo "<a href=\"./results.php\">View your results</a>";
+    echo "<a href=\"../php/results.php\">View your results</a>";
 }
 else {
     $stmt = "SELECT * FROM quiz";
@@ -34,7 +38,7 @@ else {
         array_push($qOrder, $a[0]);  
     }
 
-    echo "<form name=\"quizForm\" method=" . "\"POST\"" ." action=" . "\"grading.php\"" . "><br />";
+    echo "<form name=\"quizForm\" method=" . "\"POST\"" ." action=" . "\"../php/grading.php\"" . "><br />";
     $optionsOrder = array();
     for($a = 0; $a < count($questions); $a++) {
         $question = $questions[$a];

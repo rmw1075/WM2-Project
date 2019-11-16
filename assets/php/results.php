@@ -1,12 +1,12 @@
 <?php
 $path = './';
 $page = 'Results';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 <?php
 session_start();
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
-    header("location: ../../loginpage.php");
+    header("location: loginpage.php");
     exit;
 }
 ?>
@@ -24,6 +24,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
     </style>
 </head>
 <body>
+    <?php
+    $path = './';
+    $page = 'Results';
+    include $path . '../inc/header.php';
+    ?>
     <h1>Your Quiz Result: </h1>
     <table>
         <tr>

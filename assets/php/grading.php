@@ -1,14 +1,14 @@
 <?php
 $path = './';
 $page = 'Grading';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 <?php
 // Initialize the session
 session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
-    header("location: ../../loginpage.php");
+    header("location: ./loginpage.php");
     exit;
 }
 ?>
@@ -62,9 +62,11 @@ try {
     $sql->execute();
     $sql->close();
     $mysqli->close();
-    $_SESSION["quiz"] = true;  
+    $_SESSION["quiz"] = "taken";  
 } catch(Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+
+header("location: ./results.php");
 
 ?>

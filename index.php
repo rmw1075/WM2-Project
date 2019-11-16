@@ -13,7 +13,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     $drophtml .="<a href=\"./assets/php/logout.php\">Logout</a>";
     $dropdowns = $drophtml;
 } else {
-    $drophtml="<a href=\"./loginpage.php\">Login</a>";
+    $drophtml="<a href=\"./assets/php/loginpage.php\">Login</a>";
     $dropdowns = $drophtml;
 }
 
@@ -58,7 +58,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
             </div>
         </div>
         <div class="half2">
-            <img src="assets/images/coder.gif">
+            <a href="./assets/pages/home.php"><img src="assets/images/coder.gif"></a>
         </div>
     </section>
     <button onclick="topFunction()" id="myBtn" title="Return to top"><img src="assets/images/scroll-top.png"></button>
@@ -68,7 +68,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         <div id="trigger1" class="spacer s0"></div>
         <div id="reveal1" class="learn">
             <p>Learn the basics of Python with our easy, yet comprehensive tutorial!</p>
-            <a href="pages/learn.html"><img src="./assets/images/python3.png"></a>
+            <a href="./assets/pages/learn.php"><img src="./assets/images/python3.png"></a>
         </div>
     </section>
     <section id="item2">
@@ -76,7 +76,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         <div class="spacer-s2"></div>
         <div id="reveal2" class="test">
             <p>Feeling smart? Test your knowledge by taking our comprehensive quiz!</p>
-            <a href="pages/quiz.html"><img src="./assets/images/Quiz.png"></a>
+            <a href="./assets/pages/quiz.php"><img src="./assets/images/Quiz.png"></a>
         </div>
     </section>
     <section id="item3">
@@ -84,7 +84,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         <div class="spacer-s2"></div>
         <div id="reveal3" class="ask">
             <p>Stuck on a concept? Get help from our friendly tutors!</p>
-            <a href="pages/help.html"><img src="./assets/images/help.png"></a>
+            <a href="./assets/pages/help.php"><img src="./assets/images/help.png"></a>
         </div>
     </section>
     <footer>

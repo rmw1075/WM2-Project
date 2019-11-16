@@ -1,5 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `rmw1075` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `rmw1075`;
+
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
 -- Host: localhost    Database: rmw1075
@@ -58,7 +57,8 @@ CREATE TABLE `results` (
   `qOrder` tinytext COLLATE utf8_unicode_ci,
   `answerOrder` tinytext COLLATE utf8_unicode_ci,
   `chosen` tinytext COLLATE utf8_unicode_ci,
-  `score` decimal(5,2) DEFAULT NULL
+  `score` decimal(5,2) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -68,7 +68,7 @@ CREATE TABLE `results` (
 
 LOCK TABLES `results` WRITE;
 /*!40000 ALTER TABLE `results` DISABLE KEYS */;
-INSERT INTO `results` VALUES ('abc1234','2019-11-07 11:24:46',NULL,NULL,NULL,87.00);
+INSERT INTO `results` VALUES ('abc1234','2019-11-15 14:37:28','3,1,2,4','1-2-3-10,var=\"list\"-var=[]-var=21-var=2.0,var=2.0-var=[]-var=1-var=\"foobar\",5-2-7-1','10,var=[],var=1,5',0.25),('xyz9876','2019-11-15 19:39:12','1,2,3,4','var=[]-var=2.0-var=\"list\"-var=21,var=[]-var=1-var=\"foobar\"-var=2.0,3-10-2-1,1-2-7-5','var=2.0,var=[],1,1',0.50);
 /*!40000 ALTER TABLE `results` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('abc1234','Fred','$2y$10$PWBD4EZt/0XV4xnZ3T0qf.H8zXJ1ZU2pADV3g6BdfGWO0envGHaB.','test@gmail.com','Student'),('rmw1075','Ryan','$2y$10$13TK12A/SO1V/WFHrEaryeERZe4zz9KbI1M.dGHdM.pe72GBihaXG','rmw1075@g.rit.edu','Instructor');
+INSERT INTO `users` VALUES ('abc1234','Fred','$2y$10$PWBD4EZt/0XV4xnZ3T0qf.H8zXJ1ZU2pADV3g6BdfGWO0envGHaB.','test@gmail.com','Student'),('rmw1075','Ryan','$2y$10$13TK12A/SO1V/WFHrEaryeERZe4zz9KbI1M.dGHdM.pe72GBihaXG','rmw1075@g.rit.edu','Instructor'),('xyz9876','Lizzy Sux','$2y$10$lXwjMEvJHhsbC4amVMzUIuLb/JCv59oPOEnQmvEABkWRdoo35hTHy','random@gmail.com','Student');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-13 20:48:19
+-- Dump completed on 2019-11-15 20:40:36

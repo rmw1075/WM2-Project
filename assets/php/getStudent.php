@@ -1,7 +1,7 @@
 <?php
 $path = './';
 $page = 'Results';
-require $path . '../../inc/database/dbconnect.inc';
+require $path . '../../dbconnect.inc';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,11 @@ th {text-align: left;}
 </style>
 </head>
 <body>
-
+<?php
+    $path = './';
+    $page = 'Test Results';
+    include $path . '../inc/header.php';
+    ?>
 <?php
 $q = $_GET['q'];
 if ($q == "All") {

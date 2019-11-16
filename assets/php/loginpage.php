@@ -3,7 +3,7 @@
 session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-    header("location: ./welcome.php");
+    header("location: ../pages/home.php");
     exit;
 }
 ?>
@@ -27,6 +27,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     </style>
 </head>
 <body>
+    <?php
+    $path = './';
+    $page = 'Login';
+    include $path . '../inc/header.php';
+    ?>
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
@@ -36,7 +41,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
             <label>Password</label>
             <input type="password" name="password">
             <input type="submit" value="Login">
-            <p>Don't have an account? <a href="assets/php/register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="./register.php">Sign up now</a>.</p>
         </form>
     </div>
 </body>

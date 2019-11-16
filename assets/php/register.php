@@ -14,6 +14,11 @@ $page = 'Register';
     <title>Create User</title>
 </head>
 <body>
+    <?php
+    $path = './';
+    $page = 'Sign Up';
+    include $path . '../inc/header.php';
+    ?>
     <h1>Create User</h1>
     <form name="loginForm" method="POST" action="createuserprocess.php" onsubmit="return validatePasswords();">
       <p>RIT UserID (ex: abc1234): <input type="text" name="userID" /></p>

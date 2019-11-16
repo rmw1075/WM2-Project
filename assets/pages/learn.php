@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../assets/css/quiz.css">
-    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../css/learn.css">
+    <title>Learn</title>
 </head>
 <body>
-    <h1>QUIZ PAGE</h1>
+    <?php
+    $path = './';
+    $page = 'Learn';
+    include $path . '../inc/header2.php';
+    ?>
 </body>
 </html>

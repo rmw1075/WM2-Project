@@ -9,49 +9,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Home -LearnPy</title>
-        <link rel="stylesheet" type="text/css" href="template.css" />
+        <link rel="stylesheet" type="text/css" href="../css/template.css" />
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	    <script type="text/javascript" src=""></script>
     </head>
     <body>
         
         <div class="content">
-            <div id="header">
-                <div id="leftLinks">
-                    <a href="">Learn</a>
-                    |
-                    <a href="">Quiz</a>
-                    |
-                    <a href="">Form</a>
-                    |
-                    <a href="">About Us</a>
-                </div><!-- End of leftLinks -->
-
-                <div id="rightLinks">
-                    <a href="">Log-in</a>
-                    |
-                    <a href="">Sign-up</a>
-                </div><!-- End of rightLinks -->
-            </div><!-- End of header -->
-
-            <div id="header2">
-                <a href="home.html">
-                    <img id="desktop" src="black_h_lpy.png" alt="Logo">
-                    <img id="mobile" src="black_v_lpy.png" alt="Logo">
-                </a>
-                <div id="h2Links">
-                    <a href="loops.html">Loops</a>
-                    |
-                    <a href="data.html">Data</a>
-                    |
-                    <a href="syntax.html">Syntax</a>
-                </div><!-- End of h2Links -->
-            </div><!-- End of header2 -->
-        
-
-        
+            <?php
+            $path = './';
+            $page = 'Home';
+            include $path . '../inc/header2.php';
+            ?>
             <div id="content">
-                
                 <p>
                     Welcome to LearnPy! Here, you will find tutorials, helpful information, and other resources to help you learn Python. This site is designed for beginners, and will go over some of the basics of Python, including its <a href="data.html">data types</a>, <a href="syntax.html">syntax</a>, and how to write <a href="loops.html">loops</a>.
                 </p>

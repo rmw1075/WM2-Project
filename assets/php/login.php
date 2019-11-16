@@ -1,7 +1,7 @@
 <?php
 $path = './';
-$page = 'Comment Submitted';
-require $path . './inc/database/dbconnect.inc';
+$page = 'Login';
+require $path . '../../dbconnect.inc';
 ?>
 
 <?php
@@ -29,9 +29,18 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION["userID"] = $row["userID"];
     $_SESSION["name"] = $row["name"];
     $_SESSION["role"] = $row["role"];
-
+    if ($_SESSION["role"] == "Student"){
+      $stmt = "SELECT * FROM results WHERE userID= '$userID'";
+      $result = $result = mysqli_query($mysqli, $stmt);
+      if (mysqli_num_rows($result) > 0) {
+        $_SESSION["quiz"] = "taken";
+      } else {
+        $_SESSION["quiz"] = "not taken";
+      }
+    }
+    
     // Redirect user to welcome page
-    header("location: ./index.php");
+    header("location: ../pages/home.php");
   } 
 }
 
