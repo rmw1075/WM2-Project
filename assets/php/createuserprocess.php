@@ -40,7 +40,7 @@ require $path . '../../dbconnect.inc';
 	$stmt->execute();
     ?>
     <h2>Your Account has been created!</h2>
-    <button><a href="./loginpage.php">Login</a></button>
+    <button><a href="./login.php">Login</a></button>
 </body>
 </html>
 

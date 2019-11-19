@@ -1,6 +1,5 @@
 <?php
 // Initialize the session
-session_start();
 $dropdowns = "";
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
@@ -13,7 +12,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
     $drophtml .="<a href=\"./assets/php/logout.php\">Logout</a>";
     $dropdowns = $drophtml;
 } else {
-    $drophtml="<a href=\"./assets/php/loginpage.php\">Login</a>";
+    $drophtml="<a href=\"./assets/php/login.php\">Login</a>";
     $dropdowns = $drophtml;
 }
 

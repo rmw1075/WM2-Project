@@ -2,18 +2,8 @@
 $path = './';
 $page = 'Grading';
 require $path . '../../dbconnect.inc';
-?>
-<?php
-// Initialize the session
-session_start();
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
-    header("location: ./loginpage.php");
-    exit;
-}
-?>
 
-<?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -49,7 +39,7 @@ foreach ($optionOrder as $op) {
 
 // An error is being thrown here : binding_error
 try {
-    include($path . '../../inc/database/dbconnect.inc');
+    include($path . '../../dbconnect.inc');
     if ($mysqli->connect_error) {
         die("Connection failed: " . $mysqli->connect_error);
     }

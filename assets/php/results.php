@@ -3,13 +3,7 @@ $path = './';
 $page = 'Results';
 require $path . '../../dbconnect.inc';
 ?>
-<?php
-session_start();
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
-    header("location: loginpage.php");
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +33,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
         </tr>
         <?php
         $userID = $_SESSION["userID"];
-        $stmt = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID WHERE users.userID = '$userID'";
+        $stmt = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users WHERE users.userID = '$userID' INNER JOIN rmw1075.results ON users.userID = results.userID ";
         $result = mysqli_query($mysqli, $stmt);
         if (mysqli_num_rows($result) > 0){
             while ($row = $result->fetch_assoc()) {
