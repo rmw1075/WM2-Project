@@ -1,0 +1,11 @@
+.dangerV {
+    visibility: visible;
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    transition-delay: 2s;
+    transition: all 1s ease-out;  
+}
+
+.danger {
+    visibility: hidden;
+}

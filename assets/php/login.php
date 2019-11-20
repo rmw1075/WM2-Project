@@ -18,9 +18,9 @@ if (mysqli_num_rows($res) > 0) {
     // Store data in session variables
     $_SESSION["loggedin"] = true;
     $_SESSION["userID"] = $row["userID"];
-    $_SESSION["name"] = $row["name"];
+    $_SESSION["name"] = $row["firstName"];
     $_SESSION["role"] = $row["role"];
-    if ($_SESSION["role"] == "Student"){
+    if ($_SESSION["role"] = "Student"){
       $stmt = "SELECT * FROM results WHERE userID = '$userID'" ;
       $result = mysqli_query($mysqli, $stmt);
       if (mysqli_num_rows($result) > 0) {

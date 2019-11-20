@@ -2,14 +2,12 @@
 $path = './';
 $page = 'Quiz';
 require $path . '../../dbconnect.inc';
-?>
-<?php
-
-$path = './';
-$page = 'Quiz';
 include $path . '../inc/header.php';
-?>
-<?php
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
+    header("location: ../php/login.php");
+}
+
 if ($_SESSION["quiz"] == "taken") {
     echo "<h1>You have already taken the quiz.</h1>";
     echo "<a href=\"../php/results.php\">View your results</a>";

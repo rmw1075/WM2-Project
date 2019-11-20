@@ -47,11 +47,11 @@ function showStudent(str) {
 <select name="students" onchange="showStudent(this.value)">
   <option value="" selected>Select a person:</option>
   <?php
-    $stmt = "SELECT userID, `name`, `role` FROM rmw1075.users WHERE `role`='Student' AND (userID IN (SELECT userID FROM rmw1075.results))";
+    $stmt = "SELECT userID, firstName, lastName, `role` FROM rmw1075.users WHERE `role`='Student' AND (userID IN (SELECT userID FROM rmw1075.results))";
     $result = mysqli_query($mysqli, $stmt);
     if (mysqli_num_rows($result) > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<option value=\"" . $row["userID"] . "\">" . $row["name"] . "</option>";
+            echo "<option value=\"" . $row["userID"] . "\">" . $row["firstName"] . $row["lastName"] . "</option>";
         }
     }
   ?>

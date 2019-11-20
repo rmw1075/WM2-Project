@@ -1,14 +1,15 @@
-USE rmw1075;
--- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
+CREATE DATABASE  IF NOT EXISTS `rmw1075` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `rmw1075`;
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
 -- Host: localhost    Database: rmw1075
 -- ------------------------------------------------------
--- Server version	5.7.27-0ubuntu0.18.04.1
+-- Server version	5.7.28-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -22,7 +23,7 @@ USE rmw1075;
 
 DROP TABLE IF EXISTS `quiz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `quiz` (
   `qnum` int(20) unsigned NOT NULL AUTO_INCREMENT,
   `question` mediumtext COLLATE utf8_unicode_ci,
@@ -31,7 +32,7 @@ CREATE TABLE `quiz` (
   `option3` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
   `option4` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`qnum`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +41,7 @@ CREATE TABLE `quiz` (
 
 LOCK TABLES `quiz` WRITE;
 /*!40000 ALTER TABLE `quiz` DISABLE KEYS */;
-INSERT INTO `quiz` VALUES (1,'Which variable is being assigned to a list object?','var=2.0','var=[]','var=\"list\"','var=21'),(2,'Which variable is being assigned to a floating point value?','var=[]','var=\"foobar\"','var=1','var=2.0'),(3,'How many times will this for loop print out I love python','3','1','2','10'),(4,'How many times will this while loop print out I love Pizza','5','1','2','7');
+INSERT INTO `quiz` VALUES (1,'var=2.0','var=[]','var=\"list\"','var=21',NULL),(2,'var=[]','var=\"foobar\"','var=1','var=2.0',NULL),(3,'Whole numbers','Characters','Decimal numbers','All of the above',NULL),(4,'Decimal numbers','Characters','Whole numbers','All of the above',NULL),(5,'With \"[name] = [value]\"','With \"var [name] = [value]\"','With \"[value] = [name]\"','With \"[value] = var [name]\"',NULL),(6,'list1.append()','list1.add()','list1.attach','list1.plus()',NULL),(7,'len(StringName)','length(StringName)','calcLen(StringName)','StringLength(StringName)',NULL),(8,'While loop','For loop','If loop','When loop',NULL),(9,'Else statement','Variable declaration','While loop','For statement',NULL),(10,'#comment','//comment','<!-- comment -->','/* comment */',NULL),(11,'To connect lines of code with each other','To make it easier to read','To make it look pretty','No reason at all',NULL),(12,'\":\"','\".\"','\"/\"','Nothing',NULL),(13,'For Loop','While Loop','If Statement','Len() function',NULL),(14,'x++','You can\'t add to a variable','x.add()','x plus one',NULL),(15,'string(var)','float(var)','cast(var)','turnString(var)',NULL);
 /*!40000 ALTER TABLE `quiz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,7 +51,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `results`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `results` (
   `userID` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   `quizDate` datetime DEFAULT NULL,
@@ -68,7 +69,6 @@ CREATE TABLE `results` (
 
 LOCK TABLES `results` WRITE;
 /*!40000 ALTER TABLE `results` DISABLE KEYS */;
-INSERT INTO `results` VALUES ('abc1234','2019-11-15 14:37:28','3,1,2,4','1-2-3-10,var=\"list\"-var=[]-var=21-var=2.0,var=2.0-var=[]-var=1-var=\"foobar\",5-2-7-1','10,var=[],var=1,5',0.25),('xyz9876','2019-11-15 19:39:12','1,2,3,4','var=[]-var=2.0-var=\"list\"-var=21,var=[]-var=1-var=\"foobar\"-var=2.0,3-10-2-1,1-2-7-5','var=2.0,var=[],1,1',0.50);
 /*!40000 ALTER TABLE `results` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,10 +78,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `userID` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `firstName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `lastName` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
@@ -95,7 +96,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('abc1234','Fred','$2y$10$PWBD4EZt/0XV4xnZ3T0qf.H8zXJ1ZU2pADV3g6BdfGWO0envGHaB.','test@gmail.com','Student'),('rmw1075','Ryan','$2y$10$13TK12A/SO1V/WFHrEaryeERZe4zz9KbI1M.dGHdM.pe72GBihaXG','rmw1075@g.rit.edu','Instructor'),('xyz9876','Lizzy Sux','$2y$10$lXwjMEvJHhsbC4amVMzUIuLb/JCv59oPOEnQmvEABkWRdoo35hTHy','random@gmail.com','Student');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-15 20:40:36
+-- Dump completed on 2019-11-20 17:02:35

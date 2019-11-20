@@ -30,9 +30,9 @@ th {text-align: left;}
 <?php
 $q = $_GET['q'];
 if ($q == "All") {
-    $sql = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID";  
+    $sql = "SELECT users.userID, firstName, lastName, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID";  
 } else {
-    $sql = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID WHERE users.userID = '$q'";
+    $sql = "SELECT users.userID, firstName, lastName, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID WHERE users.userID = '$q'";
 }
 $result = mysqli_query($mysqli,$sql);
 
@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) > 0){
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row['userID'] . "</td>";
-        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['lastName'] . ", " . $row['firstName'] . "</td>";
         if($row['quizDate'] == "") {
             echo "<td>Not taken</td>";
             echo "<td>N\A</td>";

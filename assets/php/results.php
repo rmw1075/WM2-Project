@@ -33,13 +33,13 @@ require $path . '../../dbconnect.inc';
         </tr>
         <?php
         $userID = $_SESSION["userID"];
-        $stmt = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users WHERE users.userID = '$userID' INNER JOIN rmw1075.results ON users.userID = results.userID ";
+        $stmt = "SELECT users.userID, firstName, lastName, quizDate, score FROM rmw1075.users WHERE users.userID = '$userID' INNER JOIN rmw1075.results ON users.userID = results.userID ";
         $result = mysqli_query($mysqli, $stmt);
         if (mysqli_num_rows($result) > 0){
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['userID'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['lastName'] . ", " . $row['firstName'] . "</td>";
                 if($row['quizDate'] == "") {
                     echo "<td>Not taken</td>";
                     echo "<td>N\A</td>";

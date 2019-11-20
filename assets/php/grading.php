@@ -37,7 +37,6 @@ foreach ($optionOrder as $op) {
     array_push($optionsImploded, $optionString);
 }
 
-// An error is being thrown here : binding_error
 try {
     include($path . '../../dbconnect.inc');
     if ($mysqli->connect_error) {

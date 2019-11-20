@@ -29,14 +29,15 @@ require $path . '../../dbconnect.inc';
 
     // Get the user's Information
     $userID = test_input($_POST['userID']);
-	$name =  test_input($_POST['name']);
+	$fname =  test_input($_POST['fname']);
+	$lname =  test_input($_POST['lname']);
     $password1 = test_input($_POST['password1']);
     $password2 = test_input($_POST['password2']);
     $email = test_input($_POST['email']);
 	$role = test_input($_POST['role']);
 	$hashedpass = password_hash($password1, PASSWORD_BCRYPT);
-    $stmt = $mysqli->prepare("INSERT INTO rmw1075.users(userID, `name`, `password`, email, `role`) VALUES (?, ?, ?, ?, ?)");
-	$stmt->bind_param("sssss", $userID, $name, $hashedpass, $email, $role);
+    $stmt = $mysqli->prepare("INSERT INTO rmw1075.users(userID, firstName, lastName, `password`, email, `role`) VALUES (?, ?, ?, ?, ?, ?)");
+	$stmt->bind_param("sssss", $userID, $fname, $lname, $hashedpass, $email, $role);
 	$stmt->execute();
     ?>
     <h2>Your Account has been created!</h2>

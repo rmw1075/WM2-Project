@@ -5,7 +5,7 @@
         <a href="../pages/learn.php">Learn</a>
         |
         <?php 
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] = true) {
+        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
             if (($_SESSION["role"] == "Student") && ($_SESSION["quiz"] == "not taken")){
                 echo "<a href=\"../pages/quiz.php\">Quiz</a>|";
             } 
@@ -18,8 +18,8 @@
 
     <div id="rightLinks">
         <?php
-        
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] = true) {
+        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+            echo "Hi " . $_SESSION["name"] . "! |";
             if ($_SESSION["role"] == "Instructor"){
                 echo "<a href=\"../php/instructor.php\">View Scores</a>|";
             } else {
