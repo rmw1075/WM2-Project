@@ -19,8 +19,7 @@ require $path . '../../dbconnect.inc';
 	// Grab form data, validate and interact with database
 
 	// validate input data
-	function test_input($data)
-	{
+	function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
