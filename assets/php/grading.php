@@ -3,7 +3,7 @@ $path = './';
 $page = 'Grading';
 require $path . '../../dbconnect.inc';
 
-
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -28,20 +28,19 @@ for ($a = 0; $a < count($questionOrder); $a++) {
         }
     }
 }
-$mysqli->close();
 $total = eval('return '.$correctTotal."/".count($questionOrder).';');
+echo $total;
+echo "<br />";
 $date = date('Y-m-d H:i:s');
 $optionsImploded = array();
 foreach ($optionOrder as $op) {
     $optionString = implode("-", $op);
     array_push($optionsImploded, $optionString);
 }
-
+echo implode(",", $questionOrder);
+echo "<br />";
+echo implode(",", $optionsImploded);
 try {
-    include($path . '../../dbconnect.inc');
-    if ($mysqli->connect_error) {
-        die("Connection failed: " . $mysqli->connect_error);
-    }
     $sql = $mysqli->prepare("INSERT INTO rmw1075.results VALUES (?, ?, ?, ?, ?, ?)");
     $naame = $_SESSION["userID"];
     $qo = implode(',', $questionOrder);
@@ -50,12 +49,9 @@ try {
     $sql->bind_param("sssssd", $naame, $date, $qo, $oi, $a, $total);
     $sql->execute();
     $sql->close();
-    $mysqli->close();
-    $_SESSION["quiz"] = "taken";  
+    // $_SESSION["quiz"] = "taken";  
 } catch(Exception $e) {
     echo "Error: " . $e->getMessage();
 }
-
-header("location: ./results.php");
 
 ?>

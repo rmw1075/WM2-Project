@@ -36,7 +36,7 @@ require $path . '../../dbconnect.inc';
 	$role = test_input($_POST['role']);
 	$hashedpass = password_hash($password1, PASSWORD_BCRYPT);
     $stmt = $mysqli->prepare("INSERT INTO rmw1075.users(userID, firstName, lastName, `password`, email, `role`) VALUES (?, ?, ?, ?, ?, ?)");
-	$stmt->bind_param("sssss", $userID, $fname, $lname, $hashedpass, $email, $role);
+	$stmt->bind_param("ssssss", $userID, $fname, $lname, $hashedpass, $email, $role);
 	$stmt->execute();
     ?>
     <h2>Your Account has been created!</h2>

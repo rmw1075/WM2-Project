@@ -29,7 +29,7 @@ $page = 'Register';
       <p>Create a password: <input class="password" type="text" name="password1" /></p>
       <p>Re-enter password: <input class="password" type="text" name="password2" /></p>
       <p>Email: <input id="email" type="text" name="email" /></p>
-      <section name="role">
+      <section id="role" name="role">
         <h3>Role: </h3>
         <input type="radio" name="role" value="Instructor" /> Instructor<br />
         <input type="radio" name="role" value="Student" /> Student<br />
