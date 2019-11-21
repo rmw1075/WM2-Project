@@ -29,29 +29,23 @@ for ($a = 0; $a < count($questionOrder); $a++) {
     }
 }
 $total = eval('return '.$correctTotal."/".count($questionOrder).';');
-echo $total;
-echo "<br />";
 $date = date('Y-m-d H:i:s');
 $optionsImploded = array();
 foreach ($optionOrder as $op) {
-    $optionString = implode("-", $op);
+    $optionString = implode("yeet", $op);
     array_push($optionsImploded, $optionString);
 }
-echo implode(",", $questionOrder);
-echo "<br />";
-echo implode(",", $optionsImploded);
-try {
-    $sql = $mysqli->prepare("INSERT INTO rmw1075.results VALUES (?, ?, ?, ?, ?, ?)");
+if (mysqli_connect_errno()) {
+	printf("Connect failed: %s\n", mysqli_connect_error());
+	exit();
+}
+    $sql = $mysqli->prepare("INSERT INTO results VALUES (?, ?, ?, ?, ?, ?)");
     $naame = $_SESSION["userID"];
     $qo = implode(',', $questionOrder);
-    $oi = implode(',', $optionsImploded);
-    $a = implode(',', $answered);
+    $oi = implode('yeet', $optionsImploded);
+    $a = implode('yeet', $answered);
     $sql->bind_param("sssssd", $naame, $date, $qo, $oi, $a, $total);
     $sql->execute();
     $sql->close();
-    // $_SESSION["quiz"] = "taken";  
-} catch(Exception $e) {
-    echo "Error: " . $e->getMessage();
-}
-
+    header("location: ./results.php");
 ?>

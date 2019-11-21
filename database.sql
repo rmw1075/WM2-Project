@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `quiz`;
 CREATE TABLE `quiz` (
   `qnum` int(20) unsigned NOT NULL AUTO_INCREMENT,
   `question` mediumtext COLLATE utf8_unicode_ci,
-  `correct` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option2` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option3` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `option4` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `correct` mediumtext COLLATE utf8_unicode_ci,
+  `option2` mediumtext COLLATE utf8_unicode_ci,
+  `option3` mediumtext COLLATE utf8_unicode_ci,
+  `option4` mediumtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`qnum`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +41,7 @@ CREATE TABLE `quiz` (
 
 LOCK TABLES `quiz` WRITE;
 /*!40000 ALTER TABLE `quiz` DISABLE KEYS */;
-INSERT INTO `quiz` VALUES (1,'var=2.0','var=[]','var=\"list\"','var=21',NULL),(2,'var=[]','var=\"foobar\"','var=1','var=2.0',NULL),(3,'Whole numbers','Characters','Decimal numbers','All of the above',NULL),(4,'Decimal numbers','Characters','Whole numbers','All of the above',NULL),(5,'With \"[name] = [value]\"','With \"var [name] = [value]\"','With \"[value] = [name]\"','With \"[value] = var [name]\"',NULL),(6,'list1.append()','list1.add()','list1.attach','list1.plus()',NULL),(7,'len(StringName)','length(StringName)','calcLen(StringName)','StringLength(StringName)',NULL),(8,'While loop','For loop','If loop','When loop',NULL),(9,'Else statement','Variable declaration','While loop','For statement',NULL),(10,'#comment','//comment','<!-- comment -->','/* comment */',NULL),(11,'To connect lines of code with each other','To make it easier to read','To make it look pretty','No reason at all',NULL),(12,'\":\"','\".\"','\"/\"','Nothing',NULL),(13,'For Loop','While Loop','If Statement','Len() function',NULL),(14,'x++','You can\'t add to a variable','x.add()','x plus one',NULL),(15,'string(var)','float(var)','cast(var)','turnString(var)',NULL);
+INSERT INTO `quiz` VALUES (1,'Which variable is being assigned to a list object?','var=2.0','var=[]','var=\"list\"','var=21'),(2,'Which variable is being assigned to a floating point value?','var=[]','var=\"foobar\"','var=1','var=2.0'),(3,'What type of data do integers hold?','Whole numbers','Characters','Decimal numbers','All of the above'),(4,'What type of data do floats hold?','Decimal numbers','Characters','Whole numbers','All of the above'),(5,'How do you assign a variable in Python?','With \"[name] = [value]\"','With \"var [name] = [value]\"','With \"[value] = [name]\"','With \"[value] = var [name]\"'),(6,'What is th proper way  to add data to an existing list?','list1.append()','list1.add()','list1.attach','list1.plus()'),(7,'How do you determine the length of a string in Python?','len(StringName)','length(StringName)','calcLen(StringName)','StringLength(StringName)'),(8,'Which is best when you have a set amount of times you want a loop to execute? ','For Loop','While Loop','If loop','When loop'),(9,'What often accompanies an if statement?','Else statement','Variable declaration','While loop','For statement'),(10,'How do you write a comment in Python?','#comment','//comment','<!-- comment -->','/* comment */'),(11,'Why do you indent lines in Python?','To connect lines of code with each other','To make it easier to read','To make it look pretty','No reason at all'),(12,'What is required after writing a loop or if statement?','\":\"','\".\"','\"/\"','Nothing'),(13,'What is the preferred method for printing contents of a loop?','For Loop','While Loop','If Statement','Len() function'),(14,'What statement would be used to add one to the variable \"x\"?','x++','You can\'t add to a variable','x.add()','x plus one'),(15,'How do you turn a variable into a string?','str(var)','float(var)','cast(var)','turnString(var)');
 /*!40000 ALTER TABLE `quiz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +56,7 @@ CREATE TABLE `results` (
   `userID` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   `quizDate` datetime DEFAULT NULL,
   `qOrder` tinytext COLLATE utf8_unicode_ci,
-  `answerOrder` tinytext COLLATE utf8_unicode_ci,
+  `answerOrder` longtext COLLATE utf8_unicode_ci,
   `chosen` tinytext COLLATE utf8_unicode_ci,
   `score` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`userID`)
@@ -69,6 +69,7 @@ CREATE TABLE `results` (
 
 LOCK TABLES `results` WRITE;
 /*!40000 ALTER TABLE `results` DISABLE KEYS */;
+INSERT INTO `results` VALUES ('test123','2019-11-21 21:08:34','9,7,11,15,6,4,14,13,1,12,5,2,10,3,8','Variable declarationyeetWhile loopyeetFor statementyeetElse statementyeetcalcLen(StringName)yeetlen(StringName)yeetlength(StringName)yeetStringLength(StringName)yeetTo make it easier to readyeetNo reason at allyeetTo connect lines of code with each otheryeetTo make it look prettyyeetcast(var)yeetstr(var)yeetfloat(var)yeetturnString(var)yeetlist1.plus()yeetlist1.attachyeetlist1.add()yeetlist1.append()yeetWhole numbersyeetCharactersyeetDecimal numbersyeetAll of the aboveyeetx++yeetYou can\'t add to a variableyeetx.add()yeetx plus oneyeetLen() functionyeetFor LoopyeetWhile LoopyeetIf Statementyeetvar=21yeetvar=\"list\"yeetvar=2.0yeetvar=[]yeet\":\"yeet\".\"yeet\"/\"yeetNothingyeetWith \"[value] = var [name]\"yeetWith \"[value] = [name]\"yeetWith \"var [name] = [value]\"yeetWith \"[name] = [value]\"yeetvar=[]yeetvar=2.0yeetvar=1yeetvar=\"foobar\"yeetOTHER OPTIONyeet//commentyeet/* comment */yeet#commentyeetWhole numbersyeetAll of the aboveyeetCharactersyeetDecimal numbersyeetFor LoopyeetIf loopyeetWhile LoopyeetWhen loop','Variable declarationyeetlength(StringName)yeetNo reason at allyeetcast(var)yeetlist1.plus()yeetCharactersyeetx++yeetWhile Loopyeetvar=yeetyeetWith yeetvar=1yeetOTHER OPTIONyeetWhole numbersyeetWhile Loop',0.13);
 /*!40000 ALTER TABLE `results` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,6 +97,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('abc1234','Greg','Goya','$2y$10$sXBa75RJ63IJuFHCPLHvK.ZwREhoyxSsxQWtsXYyzA1f9c1HEjPV6','test@gmail.com','Student'),('rmw1075','Ryan','Weiss','$2y$10$noKWhXtV8Z8p6ZYbRe5bRu90vYldya1UKC2NBjus10B.m4UoNktA.','rmw1075@g.rit.edu','Student'),('test123','test','test','$2y$10$NUJeegnJy6S2BvUgBFUxVecvVD91PCIg.6Bf/pDzoCFm7uF/wME/e','test','Student'),('test2','Adam','Johnson','$2y$10$s3pEwoHj7u6jCLVkdxWbK.J8aFzs5FeAXrM56thCp5D7Y.1E.ILtm','nope@gmail.com','Instructor');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-20 17:02:35
+-- Dump completed on 2019-11-21 16:29:44

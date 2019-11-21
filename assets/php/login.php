@@ -28,6 +28,8 @@ if (mysqli_num_rows($res) > 0) {
       } else {
         $_SESSION["quiz"] = "not taken";
       }
+    } else {
+      $_SESSION["quiz"] = "taken";
     }
     
     // Redirect user to welcome page

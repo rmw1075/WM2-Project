@@ -33,7 +33,7 @@ require $path . '../../dbconnect.inc';
         </tr>
         <?php
         $userID = $_SESSION["userID"];
-        $stmt = "SELECT users.userID, firstName, lastName, quizDate, score FROM rmw1075.users WHERE users.userID = '$userID' INNER JOIN rmw1075.results ON users.userID = results.userID ";
+        $stmt = "SELECT users.userID, users.firstName, users.lastName, results.quizDate, results.score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID  WHERE results.userID = '$userID' ";
         $result = mysqli_query($mysqli, $stmt);
         if (mysqli_num_rows($result) > 0){
             while ($row = $result->fetch_assoc()) {
