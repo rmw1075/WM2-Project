@@ -3,41 +3,39 @@
 $path = './';
 $page = 'Login';
 require $path . '../../dbconnect.inc';
-
+session_start();
 if (isset($_POST['userID']) && isset($_POST['password'])) {
-$userID = $_POST["userID"];
-$password = $_POST["password"];
-$sql = "SELECT * FROM users WHERE userID = '$userID'";
-$res = mysqli_query($mysqli, $sql);
-$passwordstatus = false;
-if (mysqli_num_rows($res) > 0) {
-  $row = $res->fetch_assoc();
-  $passwordstatus = password_verify($password, $row["password"]);
-  if ($passwordstatus) { 
-    session_start();
-    // Store data in session variables
-    $_SESSION["loggedin"] = true;
-    $_SESSION["userID"] = $row["userID"];
-    $_SESSION["name"] = $row["firstName"];
-    $_SESSION["role"] = $row["role"];
-    if ($_SESSION["role"] = "Student"){
-      $stmt = "SELECT * FROM results WHERE userID = '$userID'" ;
-      $result = mysqli_query($mysqli, $stmt);
-      if (mysqli_num_rows($result) > 0) {
-        $_SESSION["quiz"] = "taken";
-      } else {
-        $_SESSION["quiz"] = "not taken";
-      }
-    } else {
-      $_SESSION["quiz"] = "taken";
-    }
-    
-    // Redirect user to welcome page
-    header("location: ../pages/home.php");
-  } 
-} else {
-  echo "<h1>No user found!</h1>";
-}
+	$userID = $_POST["userID"];
+	$password = $_POST["password"];
+	$sql = "SELECT * FROM users WHERE userID = '$userID'";
+	$res = mysqli_query($mysqli, $sql);
+	$passwordstatus = false;
+	if (mysqli_num_rows($res) > 0) {
+  	$row = $res->fetch_assoc();
+  	$passwordstatus = password_verify($password, $row["password"]);
+  	if ($passwordstatus) {
+    	// Store data in session variables
+    	$_SESSION["loggedin"] = true;
+    	$_SESSION["userID"] = $row["userID"];
+    	$_SESSION["name"] = $row["firstName"];
+    	$_SESSION["role"] = $row["role"];
+    	if ($_SESSION["role"] == "Student"){
+      	$stmt = "SELECT * FROM results WHERE userID = '$userID'" ;
+      	$result = mysqli_query($mysqli, $stmt);
+      	if (mysqli_num_rows($result) > 0) {
+        	$_SESSION["quiz"] = true;
+      	} else {
+        	$_SESSION["quiz"] = false;
+      	}
+    	} else {
+      	$_SESSION["quiz"] = false;
+    	}
+    	// Redirect user to welcome page
+    	header("location: ../pages/home.php");
+  	}
+	} else {
+  	echo "<h1>No user found!</h1>";
+	}
 }
 ?>
 

@@ -2,6 +2,7 @@
 $path = './';
 $page = 'Results';
 require $path . '../../dbconnect.inc';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -45,9 +46,9 @@ require $path . '../../dbconnect.inc';
                     echo "<td>N\A</td>";
                 } else {
                     echo "<td>" . $row['quizDate'] . "</td>";
-                    echo "<td>" . $row['score'] . "</td>"; 
+                    echo "<td>" . $row['score'] . "</td>";
                 }
-                echo "</tr>";    
+                echo "</tr>";
             }
         }
         ?>

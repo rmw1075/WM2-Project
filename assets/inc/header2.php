@@ -1,14 +1,14 @@
 <link rel="stylesheet" type="text/css" href="../css/template.css" />
-<?php session_start(); ?>
+
 <div id="header">
     <div id="leftLinks">
         <a href="../pages/learn.php">Learn</a>
         |
-        <?php 
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-            if (($_SESSION["role"] == "Student") && ($_SESSION["quiz"] == "not taken")){
+        <?php
+        if ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == true)) {
+            if (strcmp($_SESSION["role"], "Student") == 0){
                 echo "<a href=\"../pages/quiz.php\">Quiz</a>|";
-            } 
+            }
         }
         ?>
         <a href="">Form</a>
@@ -18,13 +18,13 @@
 
     <div id="rightLinks">
         <?php
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+        if (isset($_SESSION["loggedin"]) && ($_SESSION["loggedin"] == true)) {
             echo "Hi " . $_SESSION["name"] . "! |";
-            if ($_SESSION["role"] == "Instructor"){
+            if (strcmp($_SESSION["role"], "Instructor") == 0){
                 echo "<a href=\"../php/instructor.php\">View Scores</a>|";
             } else {
-                if($_SESSION["quiz"] == "taken") {
-                    echo "<a href=\"../php/results.php\">View Your Scores</a>|";  
+								if($_SESSION["quiz"] == true) {
+                	echo "<a href=\"../php/results.php\">View Your Scores</a>|";
                 }
             }
             echo "<a href=\"../php/logout.php\">Logout</a>";

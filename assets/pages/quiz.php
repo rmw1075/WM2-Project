@@ -2,13 +2,14 @@
 $path = './';
 $page = 'Quiz';
 require $path . '../../dbconnect.inc';
+session_start();
 include $path . '../inc/header.php';
 
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == false) {
+if (!isset($_SESSION["loggedin"]) || ($_SESSION["loggedin"] == false)) {
     header("location: ../php/login.php");
 }
 
-if ($_SESSION["quiz"] == "taken") {
+if ($_SESSION["quiz"] == true) {
     echo "<h1>You have already taken the quiz.</h1>";
     echo "<a href=\"../php/results.php\">View your results</a>";
 }
@@ -26,7 +27,7 @@ else {
     $qOrder = array();
     shuffle($questions);
     foreach ($questions as $a) {
-        array_push($qOrder, $a[0]);  
+        array_push($qOrder, $a[0]);
     }
 
     echo "<form name=\"quizForm\" method=" . "\"POST\"" ." action=" . "\"../php/grading.php\"" . "><br />";

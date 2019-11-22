@@ -2,7 +2,9 @@
 <!-- LearnPy -->
 <!-- Home -->
 <!-- ISTE240-03 -->
-
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +16,7 @@
 	    <script type="text/javascript" src=""></script>
     </head>
     <body>
-        
+
         <div class="content">
             <?php
             $path = './';
@@ -33,16 +35,14 @@
                 </p>
             </div>
         </div>
-        
-        
-        
+
     <footer class="footer">
 		<div id="footerLinks">
 			<a href="">Resources</a>
 			|
 			<a href="">More</a>
 		</div><!-- End of footerLinks -->
-		
+
 	</footer><!-- End of footer -->
     </body>
-</html>    
+</html>

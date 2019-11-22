@@ -47,5 +47,6 @@ if (mysqli_connect_errno()) {
     $sql->bind_param("sssssd", $naame, $date, $qo, $oi, $a, $total);
     $sql->execute();
     $sql->close();
+		$_SESSION["quiz"] = true;
     header("location: ./results.php");
 ?>
