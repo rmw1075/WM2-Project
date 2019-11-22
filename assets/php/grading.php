@@ -32,7 +32,7 @@ $total = eval('return '.$correctTotal."/".count($questionOrder).';');
 $date = date('Y-m-d H:i:s');
 $optionsImploded = array();
 foreach ($optionOrder as $op) {
-    $optionString = implode("yeet", $op);
+    $optionString = implode("@@@", $op);
     array_push($optionsImploded, $optionString);
 }
 if (mysqli_connect_errno()) {
@@ -48,5 +48,6 @@ if (mysqli_connect_errno()) {
     $sql->execute();
     $sql->close();
 		$_SESSION["quiz"] = true;
+		$_SESSION["result"] = $_SESSION["userID"];
     header("location: ./results.php");
 ?>

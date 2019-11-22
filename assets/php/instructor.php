@@ -2,6 +2,7 @@
 $path = './';
 $page = 'Results';
 require $path . '../../dbconnect.inc';
+session_start();
 ?>
 
 <html>
@@ -45,13 +46,13 @@ function showStudent(str) {
     <h1>Student Test Result: </h1>
 <form>
 <select name="students" onchange="showStudent(this.value)">
-  <option value="" selected>Select a person:</option>
+  <option value="" selected>Select a student:</option>
   <?php
     $stmt = "SELECT userID, firstName, lastName, `role` FROM rmw1075.users WHERE `role`='Student' AND (userID IN (SELECT userID FROM rmw1075.results))";
     $result = mysqli_query($mysqli, $stmt);
     if (mysqli_num_rows($result) > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<option value=\"" . $row["userID"] . "\">" . $row["firstName"] . $row["lastName"] . "</option>";
+            echo "<option value=\"" . $row["userID"] . "\">" . $row["lastName"] .", " . $row["firstName"] . "</option>";
         }
     }
   ?>

@@ -14,8 +14,12 @@ require $path . '../../dbconnect.inc';
 </head>
 
 <body>
+	<div class="content">
+		<?php include $path . '../inc/header3.php'; ?>
+
 	<?php
-	// Grab form data, validate and interact with database
+
+
 
 	// validate input data
 	function test_input($data) {
@@ -38,8 +42,11 @@ require $path . '../../dbconnect.inc';
 	$stmt->bind_param("ssssss", $userID, $fname, $lname, $hashedpass, $email, $role);
 	$stmt->execute();
     ?>
-    <h2>Your Account has been created!</h2>
-    <button><a href="./login.php">Login</a></button>
+		<div id="content">
+			<h2>Your Account has been created!</h2>
+    	<button><a href="./login.php">Login</a></button>
+		</div>
+</div>
 </body>
 </html>
 

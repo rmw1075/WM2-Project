@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/template.css" />
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 <!-- <?php
 // session_start();
  ?> -->

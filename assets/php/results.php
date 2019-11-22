@@ -46,7 +46,8 @@ session_start();
                     echo "<td>N\A</td>";
                 } else {
                     echo "<td>" . $row['quizDate'] . "</td>";
-                    echo "<td>" . $row['score'] . "</td>";
+										echo "<td>" . $row['score'];
+										echo "  <span style=\"color: blue; text-decoration: underline;\"><a href=\"./quizresults.php\">See quiz</a></span></td>";
                 }
                 echo "</tr>";
             }
