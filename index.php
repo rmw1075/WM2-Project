@@ -1,24 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-$dropdowns = "";
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-    $drophtml="<a>Hi, ".$_SESSION["name"]."!</a>";
-    if ($_SESSION["role"] == "Instructor"){
-        $drophtml .= "<a href=\"./assets/php/instructor.php\">View Scores</a>";
-    } else {
-        $drophtml .= "<a href=\"./assets/php/results.php\">View Your Scores</a>";
-    }
-    $drophtml .="<a href=\"./assets/php/logout.php\">Logout</a>";
-    $dropdowns = $drophtml;
-} else {
-    $drophtml="<a href=\"./assets/php/loginpage.php\">Login</a>";
-    $dropdowns = $drophtml;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,12 +23,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
         <div class="half1">
             <figure class="logo">
                 <img id="logoImage" src="./assets/images/logo.png" alt="Logo">
-                <div class="dropdown">
-                    <img src="./assets/images/user.png" alt="user">
-                    <div class="dropdown-content">
-                        <?php echo $dropdowns ?>
-                    </div>
-                </div>
             </figure>
 
             <div class="center">

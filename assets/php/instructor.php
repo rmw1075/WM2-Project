@@ -2,14 +2,9 @@
 $path = './';
 $page = 'Results';
 require $path . '../../dbconnect.inc';
-?>
-<?php
 session_start();
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
-    header("location: ./loginpage.php");
-    exit;
-}
 ?>
+
 <html>
 <head>
 <script>
@@ -48,15 +43,16 @@ function showStudent(str) {
     include $path . '../inc/header.php';
     ?>
     <br />
+    <h1>Student Test Result: </h1>
 <form>
 <select name="students" onchange="showStudent(this.value)">
-  <option value="" selected>Select a person:</option>
+  <option value="" selected>Select a student:</option>
   <?php
-    $stmt = "SELECT userID, `name`, `role` FROM rmw1075.users WHERE `role`='Student'";
+    $stmt = "SELECT userID, firstName, lastName, `role` FROM rmw1075.users WHERE `role`='Student' AND (userID IN (SELECT userID FROM rmw1075.results))";
     $result = mysqli_query($mysqli, $stmt);
     if (mysqli_num_rows($result) > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<option value=\"" . $row["userID"] . "\">" . $row["name"] . "</option>";
+            echo "<option value=\"" . $row["userID"] . "\">" . $row["lastName"] .", " . $row["firstName"] . "</option>";
         }
     }
   ?>
@@ -64,7 +60,7 @@ function showStudent(str) {
   </select>
 </form>
 <br>
-<h1>Student Test Result: </h1>
+
 <div id="result"><b>No student selected.</b></div>
 
 </body>

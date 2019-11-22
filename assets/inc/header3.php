@@ -40,11 +40,4 @@
         <img id="desktop" src="../images/black_h_lpy.png" alt="Logo">
         <img id="mobile" src="../images/black_v_lpy.png" alt="Logo">
     </a>
-    <div id="h2Links">
-        <a href="../pages/loops.php">Loops</a>
-        |
-        <a href="../pages/data.php">Data</a>
-        |
-        <a href="../pages/syntax.php">Syntax</a>
-    </div><!-- End of h2Links -->
 </div><!-- End of header2 -->

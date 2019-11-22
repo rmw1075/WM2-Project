@@ -2,14 +2,9 @@
 $path = './';
 $page = 'Results';
 require $path . '../../dbconnect.inc';
-?>
-<?php
 session_start();
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
-    header("location: loginpage.php");
-    exit;
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,21 +34,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true) {
         </tr>
         <?php
         $userID = $_SESSION["userID"];
-        $stmt = "SELECT users.userID, `name`, quizDate, score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID WHERE users.userID = '$userID'";
+        $stmt = "SELECT users.userID, users.firstName, users.lastName, results.quizDate, results.score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID  WHERE results.userID = '$userID' ";
         $result = mysqli_query($mysqli, $stmt);
         if (mysqli_num_rows($result) > 0){
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['userID'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['lastName'] . ", " . $row['firstName'] . "</td>";
                 if($row['quizDate'] == "") {
                     echo "<td>Not taken</td>";
                     echo "<td>N\A</td>";
                 } else {
                     echo "<td>" . $row['quizDate'] . "</td>";
-                    echo "<td>" . $row['score'] . "</td>"; 
+										echo "<td>" . $row['score'];
+										echo "  <span style=\"color: blue; text-decoration: underline;\"><a href=\"./quizresults.php\">See quiz</a></span></td>";
                 }
-                echo "</tr>";    
+                echo "</tr>";
             }
         }
         ?>
