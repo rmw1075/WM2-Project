@@ -19,17 +19,19 @@
 
 <body>
     <section id="top">
+
         <div class="half1">
             <figure class="logo">
-                <img src="./assets/images/logo.png" alt="Logo">
+                <img id="logoImage" src="./assets/images/logo.png" alt="Logo">
             </figure>
+
             <div class="center">
                 <h1>Welcome to LearnPy!</h1>
                 <h2>The best way to learn Python!</h2>
             </div>
         </div>
         <div class="half2">
-            <img src="assets/images/coder.gif">
+            <a href="./assets/pages/home.php"><img src="assets/images/coder.gif"></a>
         </div>
     </section>
     <button onclick="topFunction()" id="myBtn" title="Return to top"><img src="assets/images/scroll-top.png"></button>
@@ -39,7 +41,7 @@
         <div id="trigger1" class="spacer s0"></div>
         <div id="reveal1" class="learn">
             <p>Learn the basics of Python with our easy, yet comprehensive tutorial!</p>
-            <a href="pages/learn.html"><img src="./assets/images/python3.png"></a>
+            <a href="./assets/pages/learn.php"><img src="./assets/images/python3.png"></a>
         </div>
     </section>
     <section id="item2">
@@ -47,7 +49,7 @@
         <div class="spacer-s2"></div>
         <div id="reveal2" class="test">
             <p>Feeling smart? Test your knowledge by taking our comprehensive quiz!</p>
-            <a href="pages/quiz.html"><img src="./assets/images/Quiz.png"></a>
+            <a href="./assets/pages/quiz.php"><img src="./assets/images/Quiz.png"></a>
         </div>
     </section>
     <section id="item3">
@@ -55,7 +57,7 @@
         <div class="spacer-s2"></div>
         <div id="reveal3" class="ask">
             <p>Stuck on a concept? Get help from our friendly tutors!</p>
-            <a href="pages/help.html"><img src="./assets/images/help.png"></a>
+            <a href="./assets/pages/help.php"><img src="./assets/images/help.png"></a>
         </div>
     </section>
     <footer>
@@ -63,33 +65,35 @@
     </footer>
     <script>
         var myButton = document.getElementById("myBtn");
-        window.onscroll = function() {scrollFunction(myButton)};
+        window.onscroll = function() {
+            scrollFunction(myButton)
+        };
     </script>
     <script>
-        var controller = new ScrollMagic.Controller();// build scene
+        var controller = new ScrollMagic.Controller(); // build scene
         new ScrollMagic.Scene({
-            triggerElement: "#trigger1",
-            triggerHook: 0.9, // show, when scrolled 10% into view
-            offset: 50 // move trigger to center of element
-        })
+                triggerElement: "#trigger1",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50 // move trigger to center of element
+            })
             .setClassToggle("#reveal1", "visible") // add class to reveal
             // .addIndicators() // add indicators (requires plugin)
             .addTo(controller);
 
         new ScrollMagic.Scene({
-            triggerElement: "#trigger2",
-            triggerHook: 0.9, // show, when scrolled 10% into view
-            offset: 50 // move trigger to center of element
-        })
+                triggerElement: "#trigger2",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50 // move trigger to center of element
+            })
             .setClassToggle("#reveal2", "visible") // add class to reveal
             // .addIndicators() // add indicators (requires plugin)
             .addTo(controller);
 
         new ScrollMagic.Scene({
-            triggerElement: "#trigger3",
-            triggerHook: 0.9, // show, when scrolled 10% into view
-            offset: 50 // move trigger to center of element
-        })
+                triggerElement: "#trigger3",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50 // move trigger to center of element
+            })
             .setClassToggle("#reveal3", "visible") // add class to reveal
             // .addIndicators() // add indicators (requires plugin)
             .addTo(controller);
