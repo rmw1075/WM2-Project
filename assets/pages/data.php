@@ -13,7 +13,7 @@
 <body>
 	<div class="content">
         <?php
-				session_start();
+		session_start();
         $path = './';
         $page = 'Data';
         include $path . '../inc/header2.php';
@@ -93,14 +93,14 @@
 		</div><!-- End of content -->
 	</div>
 
-	<footer class="footer">
-		<div id="footerLinks">
-			<a href="">Resources</a>
-			|
-			<a href="">More</a>
-		</div><!-- End of footerLinks -->
-
-	</footer><!-- End of footer -->
+	<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
 </body>
-
+<script>
+document.getElementById("data").style.color = "orange";
+document.getElementById("learn").style.color = "orange";
+</script>
 </html>

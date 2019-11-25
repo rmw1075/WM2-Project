@@ -9,16 +9,47 @@ $page = 'Register';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <link rel="stylesheet" type="text/css" href="../css/register.css" />
+    <link rel="stylesheet" type="text/css" href="../css/template.css" />
     <script src="../js/validate.js"></script>
     <title>Create User</title>
+	<style>
+	input[type=submit]{
+		background-color:#ff9429;
+		padding:.3em;
+		text-decoration:none;
+		margin:.1em,.1em;
+		cursor:pointer;
+		width:100px;
+		height:25px;
+		border:none;
+		}
+		input[type=submit]:hover{
+		background-color:#ffba75;
+		}
+		.form > *{
+			display:block;
+			padding:.5em;
+			margin:1em;
+		}
+		input[type=text]{
+		width:50%;
+		padding:.5em;
+		box-sizing: border-box;
+		background-color: #fffbf7;
+		#content{
+			margin-top:5em;
+		}
+	}
+	</style>
 </head>
 <body>
+<div class="content">
     <?php
     $path = './';
-    $page = 'Sign Up';
-    include $path . '../inc/header.php';
+    $page = 'Login';
+    include $path . '../inc/header3.php';
     ?>
+	<div id="content">
     <h1>Create User</h1>
     <div id="alerts">
     </div>   
@@ -36,6 +67,12 @@ $page = 'Register';
       </section>
       <input type="submit" name="submit" value="Submit" />
     </form>
-
+</div>
+</div>
+<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
 </body>
 </html>

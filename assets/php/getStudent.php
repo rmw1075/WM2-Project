@@ -8,6 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/template.css" />
 <style>
 table {
     width: 100%;
@@ -23,10 +24,11 @@ th {text-align: left;}
 </style>
 </head>
 <body>
+<div class="content">
 <?php
     $path = './';
-    $page = 'Test Results';
-    include $path . '../inc/header.php';
+    $page = 'Login';
+    include $path . '../inc/header3.php';
     ?>
 <?php
 $q = $_GET['q'];
@@ -64,5 +66,11 @@ if (mysqli_num_rows($result) > 0){
 echo "</table>";
 mysqli_close($mysqli);
 ?>
+</div>
+<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
 </body>
 </html>
