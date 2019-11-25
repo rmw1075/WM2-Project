@@ -21,12 +21,12 @@ session_start();
             <?php
             $path = './';
             $page = 'Home';
-            include $path . '../inc/header3.php';
+            include $path . '../inc/header2.php';
             ?>
 						<div id="content">
 							<h1>Home</h1>
 			            <p>
-			                Welcome to LearnPy! Here, you will find tutorials, helpful information, and other resources to help you learn Python. This site is designed for beginners, and will go over some of the basics of Python, including its <a href="#">data types</a>, <a href="#">syntax</a>, and how to write <a href="#">loops</a>.
+			                Welcome to LearnPy! Here, you will find tutorials, helpful information, and other resources to help you learn Python. This site is designed for beginners, and will go over some of the basics of Python, including its <a href="data.php">data types</a>, <a href="syntax.php">syntax</a>, and how to write <a href="loops.php">loops</a>.
 			            </p>
 			            <p>
 			                Python is an interpreted, object-oriented programming language, Programs written in Python can be used for a number of different functions, such as reading a text file, making games like tic-tac-toe or hangman, and solving math problems of different complexities.  Python is a great language to learn if you’re interested in application development, data mining, or scripting.
@@ -38,14 +38,11 @@ session_start();
 						</div>
 
         </div>
-
-    <footer class="footer">
-		<div id="footerLinks">
-			<a href="">Resources</a>
-			|
-			<a href="">More</a>
-		</div><!-- End of footerLinks -->
-
-	</footer><!-- End of footer -->
+	<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
+    
     </body>
 </html>

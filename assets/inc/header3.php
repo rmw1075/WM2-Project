@@ -2,12 +2,12 @@
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 <div id="header">
     <div id="leftLinks">
-        <a href="../pages/learn.php">Learn</a>
+        <a href="../pages/learn.php" id="learn">Learn</a>
         |
         <?php
         if ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == true)) {
             if (strcmp($_SESSION["role"], "Student") == 0){
-                echo "<a href=\"../pages/quiz.php\">Quiz</a>|";
+                echo "<a href=\"../pages/quiz.php\" id=\"quiz\">Quiz</a>|";
             }
             if ($_SESSION["survey"] == false) {
                 echo "<a href=\"../pages/survey.php\">Survey</a>|";
@@ -15,8 +15,8 @@
         }
         ?>
         <a href="../pages/blog.php">Blog</a>
-		|
-        <a href="">About Us</a>
+        |
+        <a href="" id="about">About Us</a>
     </div><!-- End of leftLinks -->
 
     <div id="rightLinks">
@@ -39,7 +39,7 @@
 </div><!-- End of header -->
 
 <div id="header2">
-    <a href="../pages/home.php">
+    <a href="../pages/home.php" id="logo">
         <img id="desktop" src="../images/black_h_lpy.png" alt="Logo">
         <img id="mobile" src="../images/black_v_lpy.png" alt="Logo">
     </a>

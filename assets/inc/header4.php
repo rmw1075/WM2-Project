@@ -9,9 +9,12 @@
             if (strcmp($_SESSION["role"], "Student") == 0){
                 echo "<a href=\"../pages/quiz.php\" id=\"quiz\">Quiz</a>|";
             }
+            if ($_SESSION["survey"] == false) {
+                echo "<a href=\"../pages/survey.php\">Survey</a>|";
+            }
         }
         ?>
-        <a href="../pages/survey.php" id="forms">Forms</a>
+        <a href="../pages/blog.php">Blog</a>
         |
         <a href="" id="about">About Us</a>
     </div><!-- End of leftLinks -->
@@ -40,11 +43,4 @@
         <img id="desktop" src="../images/black_h_lpy.png" alt="Logo">
         <img id="mobile" src="../images/black_v_lpy.png" alt="Logo">
     </a>
-    <div id="h2Links">
-        <a href="../pages/loops.php" id="loops">Loops</a>
-        |
-        <a href="../pages/data.php" id="data">Data</a>
-        |
-        <a href="../pages/syntax.php" id="syntax">Syntax</a>
-    </div><!-- End of h2Links -->
 </div><!-- End of header2 -->

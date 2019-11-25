@@ -7,7 +7,9 @@ session_start();
 
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/template.css" />
 <script>
+
 function showStudent(str) {
     if (str == "") {
         document.getElementById("result").innerHTML = "No student selected.";
@@ -37,10 +39,11 @@ function showStudent(str) {
 </style>
 </head>
 <body>
+	<div class="content">
     <?php
     $path = './';
-    $page = 'Instructor Page';
-    include $path . '../inc/header.php';
+    $page = 'Login';
+    include $path . '../inc/header3.php';
     ?>
     <br />
     <h1>Student Test Result: </h1>
@@ -62,6 +65,11 @@ function showStudent(str) {
 <br>
 
 <div id="result"><b>No student selected.</b></div>
-
+</div>
+<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
 </body>
 </html>

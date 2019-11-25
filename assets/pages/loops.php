@@ -71,14 +71,14 @@
 		</div><!-- End of content -->
 	</div>
 
-	<footer class="footer">
-		<div id="footerLinks">
-			<a href="">Resources</a>
-			|
-			<a href="">More</a>
-		</div><!-- End of footerLinks -->
-
-	</footer><!-- End of footer -->
+	<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
 </body>
-
+<script>
+document.getElementById("loops").style.color = "orange";
+document.getElementById("learn").style.color = "orange";
+</script>
 </html>

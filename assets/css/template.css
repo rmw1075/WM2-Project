@@ -1,6 +1,7 @@
 /*<!-- LearnPy -->
 <!-- 11/09/2019 -->
 <!-- Css Template -->*/
+
 /*
 push to get footer to stay on bottom of page
 */
@@ -123,18 +124,6 @@ Content Section
 	padding:1em;
 	
 }
-
-#content p a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: cadetblue;
-}
-
-#content p a:hover{
-    color: burlywood;
-    text-decoration: underline;
-}
-
 #content h2{
 	font-size:60px;
 }
@@ -201,16 +190,30 @@ MEDIA QUERIES
 	}
 }
 @media screen and (max-width: 635px){
+	#logo{
+		margin-left:35%;
+		margin-right:35%;
+		display:block;
+	}
 	#h2Links{
 		padding-left:0em;
 		font-size:30px;
+		display:block;
+		margin-left:22%;
+		margin-right:22%;
+		
 	}
 	#header a{
 		padding:0em;
 	}
+	#header{
+		width:100%;
+	}
 	#h2Links{
 		display:block;
 		padding-left:1em;
+		padding-right:0em;
+		width:100%;
 	}
 	#content{
 		margin-top:11em;
@@ -220,5 +223,47 @@ MEDIA QUERIES
 	#content p{
 		font-size:25px;
 		padding-left:.5em;
+	}
+	#leftLinks{
+		padding-left:1em;
+	}
+	#footerLinks{
+		left:35%;
+	}
+}
+@media screen and (max-width: 500px){
+	#h2Links{
+		margin-left:6%;
+		margin-right:10%;
+		font-size:25px;
+		
+	}
+	#logo{
+		margin-left:20%;
+		margin-right:20%;
+		display:block;
+	}
+	#footerLinks{
+		left:25%;
+	}
+	#header{
+		height:60px;
+	}
+	#header2{
+		top:3.5em;
+	}
+	#leftLinks{
+		margin-left:15%;
+
+	}
+	#rightLinks{
+		margin-right:20%;
+	
+	}	
+	#content{
+		margin-top:11em;
+		margin-right:.1em;
+		margin-left:.1em;
+		padding-left:0em;
 	}
 }
