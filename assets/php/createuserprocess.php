@@ -1,6 +1,6 @@
 <?php
 $path = './';
-$page = 'Comment Submitted';
+$page = 'User Created';
 require $path . '../../dbconnect.inc';
 ?>
 

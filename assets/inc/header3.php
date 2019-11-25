@@ -9,10 +9,13 @@
             if (strcmp($_SESSION["role"], "Student") == 0){
                 echo "<a href=\"../pages/quiz.php\">Quiz</a>|";
             }
+            if ($_SESSION["survey"] == false) {
+                echo "<a href=\"../pages/survey.php\">Survey</a>|";
+            }
         }
         ?>
-        <a href="">Form</a>
-        |
+        <a href="../pages/blog.php">Blog</a>
+		|
         <a href="">About Us</a>
     </div><!-- End of leftLinks -->
 

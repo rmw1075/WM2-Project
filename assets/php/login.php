@@ -20,16 +20,24 @@ if (isset($_POST['userID']) && isset($_POST['password'])) {
     	$_SESSION["name"] = $row["firstName"];
     	$_SESSION["role"] = $row["role"];
     	if ($_SESSION["role"] == "Student"){
-      	$stmt = "SELECT * FROM results WHERE userID = '$userID'" ;
-      	$result = mysqli_query($mysqli, $stmt);
-      	if (mysqli_num_rows($result) > 0) {
-        	$_SESSION["quiz"] = true;
-      	} else {
-        	$_SESSION["quiz"] = false;
-      	}
+      		$stmt = "SELECT * FROM results WHERE userID = '$userID'" ;
+      		$result = mysqli_query($mysqli, $stmt);
+      		if (mysqli_num_rows($result) > 0) {
+        		$_SESSION["quiz"] = true;
+      		} else {
+        		$_SESSION["quiz"] = false;
+      		}
     	} else {
       	$_SESSION["quiz"] = false;
-    	}
+		}
+		
+		$stmt = "SELECT * FROM surveycomments WHERE userID = '$userID'" ;
+		$result = mysqli_query($mysqli, $stmt);
+		if (mysqli_num_rows($result) > 0) {
+			$_SESSION["survey"] = true;
+		} else {
+			$_SESSION["survey"] = false;
+		}
     	// Redirect user to welcome page
     	header("location: ../pages/home.php");
   	}
