@@ -14,6 +14,7 @@ session_start();
         <link rel="stylesheet" type="text/css" href="../css/template.css" />
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	    <script type="text/javascript" src=""></script>
+		<script  src="../js/autoslideshow1.js"></script>
     </head>
     <body>
 
@@ -34,7 +35,15 @@ session_start();
 			            <p>
 			                Click on one of the links above to get started learning Python!
 			            </p>
-
+						
+						<div id="auto1">
+							<figure class="slide">
+								<img id="auto1_slideshow" src="./../images/autoslide/1.png" alt="Home page Slideshow" title="Auto Slideshow1">  
+								<figcaption>Slideshow</figcaption>
+							</figure>
+						</div>
+						
+						
 						</div>
 
         </div>

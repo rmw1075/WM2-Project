@@ -6,8 +6,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/template.css" />
+	<link rel="stylesheet" type="text/css" href="../css/swipe css.css" />
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	<script type="text/javascript" src=""></script>
+	<script  src="../js/swipeslideshow1.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,23 @@
                     Besides referencing pieces of data, variables can also be used for computations. Say you assign “num1 = 5,” and “num2 = 3.” By writing the statement “num3 = num1 + num2,” the value of “num3” would automatically reference the number 8, since that’s the value of num1 + num2.
                 </p>
                 <!--screenshot-->
+				<div class="swipe-slideshow1">
+				<div class ="mySlides" style="display:block;">
+					<figure style="max-width:274px;">
+						<img class="swipepic1" src="./../images/codeImages/swipe/1.png" alt="variables code" title="variables code">
+						<figcaption class="Text">Code</figcaption>
+					</figure>
+				</div>
 
+				<div class ="mySlides">
+					<figure style="max-width:323px;">
+						<img class="swipepic1" src="./../images/codeImages/swipe/2.png" alt="Variables Output" title="Variables Output">
+						<figcaption class="Text">Output</figcaption>
+					</figure>  
+				</div> 
+				<a class="previous" onclick=plusSlides(-1)>&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
 
             <h2>Lists</h2>
                 <p>
@@ -52,11 +70,17 @@
                     To add items to a list that’s already been created, the word “append” is used. The syntax for this would be <i>ListName.append(“additional”)</i>. Any objects added to the list will be placed at the end, after the items already in the list.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:451px;">
+					<img id="listCode" src="./../images/codeImages/listsCode.png" alt="Lists" title="Lists">
+				</figure>
 
                 <p>
                     After adding objects to a list, a single object can be called. This is done by using print, and calling the position of the item we want to pull.  For example, if we wanted to pull “this” from List1 from above, we would call it as <i>print List1[0]</i>. This tells the program to print the object located in position 0, in this case, the string “this”.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:344px;">
+					<img id="listOut" src="./../images/codeImages/listsOut.png" alt="Lists Output" title="Lists output">
+				</figure>
 
                 <h3>Note</h3>
                 <p>
@@ -75,20 +99,40 @@
                     There are a number of different functions that can be performed on strings. Some of the most common are to determine its length, or pull a character located in a certain position within the string. Using <i>String1 = “This is a string”</i> as an example, performing the function <i>len(String1)</i> will calculate the length of the string, in terms of number of characters.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:373px;">
+					<img id="Strings" src="./../images/codeImages/stringsCode.png" alt="Strings" title="Strings">
+				</figure>
 
                 <p>
                     Another important function is to pull the character located at a certain position in the string. Using <i>String1 = “This is a string”</i> again, performing the function <i>string[0]</i> would return the character located at position 0, in this case, “T.”  Note that strings, like lists, start counting with 0 rather than one.
                 </p>
-
-            <h2>Strings</h2>
+				<figure class="codeScreen" style="max-width:373px;">
+					<img id="Strings" src="./../images/codeImages/stringsOut.png" alt="Strings Out" title="Strings Out">
+				</figure>
+            <h2>Integers</h2>
                 <p>
                     One of the easiest data types to understand in Python, an <strong>integer</strong> is a number that does not have a decimal point (a whole number). Integers are good for performing math, and are often assigned to variables if the same integer is used multiple times in one program. 8, 50000, and 13 would all be considered integers in Python.
                 </p>
+				<figure class="codeScreen" style="max-width:345px;">
+					<img id="ints" src="./../images/codeImages/integersCode.png" alt="ints" title="ints">
+				</figure>
+				<figure class="codeScreen" style="max-width:320px;">
+					<img id="ints" src="./../images/codeImages/integersOut.png" alt="ints out" title="ints out">
+				</figure>
 
             <h2>Floats</h2>
                 <p>
                     <strong>Floats</strong> are another common data type used in Python, and represent numbers that have a decimal place.
+					
                 </p>
+				<figure class="codeScreen" style="max-width:585px;">
+					<img id="floats" src="./../images/codeImages/floatsCode.png" alt="floats" title="floats">
+				</figure>
+				<figure class="codeScreen" style="max-width:312px;">
+					<img id="floats" src="./../images/codeImages/floatsOut.png" alt="floats out" title="floats out">
+				</figure>
+				<p></p>
+				<br>
 
 		</div><!-- End of content -->
 	</div>

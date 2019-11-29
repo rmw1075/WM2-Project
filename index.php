@@ -57,7 +57,7 @@
         <div class="spacer-s2"></div>
         <div id="reveal3" class="ask">
             <p>Stuck on a concept? Get help from our friendly tutors!</p>
-            <a href="./assets/pages/help.php"><img src="./assets/images/help.png"></a>
+            <a href="./assets/pages/home.php"><img src="./assets/images/help.png"></a>
         </div>
     </section>
     <footer>
