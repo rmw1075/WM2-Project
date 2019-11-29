@@ -19,7 +19,7 @@
 			?>
 			<a href="../pages/blog.php">Blog</a>
 			|
-			<a href="" id="about">About Us</a>
+			<a href="../pages/about.php" id="about">About Us</a>
 	</div><!-- End of leftLinks -->
 
 	<div id="rightLinks">

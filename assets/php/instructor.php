@@ -43,7 +43,7 @@ function showStudent(str) {
     <?php
     $path = './';
     $page = 'Login';
-    include $path . '../inc/header3.php';
+    include $path . '../inc/header.php';
     ?>
     <br />
     <h1>Student Test Result: </h1>

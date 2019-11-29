@@ -29,10 +29,15 @@
                     For loops are created by defining the structure that will be looped through, then using a for statement. The for statement follows the syntax <i>for x in y: // print(x) //x++</i>.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:766px;">
+					<img id="forCode" src="./../images/codeImages/forloopsCode.png" alt="for Loops" title="for Loops">
+				</figure>
                 <p>
                     This statement will print the phrase “hello world!” three times. This is because we are using the for loop to tell the program to print the phrase “hello world” and then increment the value of x, until the value of x equals the value of y, which is 3.
                 </p>
-
+				<figure class="codeScreen" style="max-width:316px;">
+					<img id="forOut" src="./../images/codeImages/forloopsOut.png" alt="for Loops output" title="for Loops output ">
+				</figure>
 
             <h2>While Loops</h2>
                 <p>
@@ -43,10 +48,15 @@
                     In Python, a while loop is created using the statement <i>while x: // y,</i>  Often, “x” will be a statement such as <i>x &lt; 5,</i> and “y” will be a statement such as <i>print(“I love pizza”)</i>.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:273px;">
+					<img id="whileCode" src="./../images/codeImages/whileCode.png" alt="while loops" title="while loops ">
+				</figure>
                 <p>
                     To ensure the loop does not run forever, a statement is generally needed after y that changes the value of x. This way, x will eventually no longer meet the conditions required for the loop to run, and it will stop executing. In this example, x was set to initially equal 2, and the while loop will execute while x is less than 5. To prevent it from running forever, x is increased by one after every print statement, meaning that x will at some point equal 5, and the loop will stop running.
                 </p>
-
+				<figure class="codeScreen" style="max-width:333px;">
+					<img id="whileOut" src="./../images/codeImages/whileOut.png" alt="while loops output" title="while loops output">
+				</figure>
 
             <h2>If Statements</h2>
                 <p>
@@ -60,11 +70,17 @@
                     If statements are created by defining the condition you want to be met using the statement <i>if condition: // what should happen</i>. Often the condition will be a mathematical statement such as x=y, x&lt;y, etc.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:527px;">
+					<img id="ifCode" src="./../images/codeImages/ifCode.png" alt="if loops" title="if loops ">
+				</figure>
 
                 <p>
                     In this situation, the statement “Hi, x is 5” will print because the condition “x=5” has been met. If x had been set to equal another number, than nothing would happen when the code was run, because the statement was not met at all.
                 </p>
                 <!--screenshot-->
+				<figure class="codeScreen" style="max-width:353px;">
+					<img id="ifOut" src="./../images/codeImages/ifOut.png" alt="if loops output" title="if loops output">
+				</figure>
                 <p>
                     In this version of the example, the statement “Hi, x is not 5” will run if x is set to equal any number other than 5. In this case, a line of code from this block is running no matter what the situation. The value of x will determine which line will run, however.
                 </p>

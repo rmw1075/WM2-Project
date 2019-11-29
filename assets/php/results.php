@@ -36,7 +36,7 @@ session_start();
         </tr>
         <?php
         $userID = $_SESSION["userID"];
-        $stmt = "SELECT users.userID, users.firstName, users.lastName, results.quizDate, results.score FROM at9148.users INNER JOIN at9148.results ON users.userID = results.userID  WHERE results.userID = '$userID' ";
+        $stmt = "SELECT users.userID, users.firstName, users.lastName, results.quizDate, results.score FROM rmw1075.users INNER JOIN rmw1075.results ON users.userID = results.userID  WHERE results.userID = '$userID' ";
         $result = mysqli_query($mysqli, $stmt);
         if (mysqli_num_rows($result) > 0){
             while ($row = $result->fetch_assoc()) {
