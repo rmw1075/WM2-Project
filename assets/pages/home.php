@@ -22,7 +22,7 @@ session_start();
             <?php
             $path = './';
             $page = 'Home';
-            include $path . '../inc/header2.php';
+            include $path . '../inc/header3.php';
             ?>
 						<div id="content">
 							<h1>Home</h1>

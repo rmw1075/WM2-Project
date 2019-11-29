@@ -19,7 +19,6 @@
 
 <body>
     <section id="top">
-
         <div class="half1">
             <figure class="logo">
                 <img id="logoImage" src="./assets/images/logo.png" alt="Logo">

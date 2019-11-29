@@ -138,20 +138,20 @@ footer{
 	background-color:black;
 	width:100%;
 	color:white;
-	height:60px;
+	height:10px;
 	display:block;
+	bottom: 0px;
 }
 #footerLinks{
-	padding-top:.5em;
-	padding-bottom:.25em;
+	padding-top:1em;
+	padding-bottom:.5em;
 	float:center;
-	left:45%;
+	left:42.5%;
 	position:absolute;
 }
 footer a{
 	color:white;
 	padding:1em;
-	padding-bottom:0em;
 	display:inline;
 	text-decoration:none;
 	transition: color 0.2s ease;
@@ -168,7 +168,9 @@ footer a:hover{
 footer a:active{
 	color:white;
 }
-
+#modified {
+	margin-top: 3px;
+}
 /*
 Slideshows
 */

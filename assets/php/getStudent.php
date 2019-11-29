@@ -28,7 +28,7 @@ th {text-align: left;}
 <?php
     $path = './';
     $page = 'Login';
-    include $path . '../inc/header3.php';
+    include $path . '../inc/header.php';
     ?>
 <?php
 $q = $_GET['q'];
@@ -67,10 +67,6 @@ echo "</table>";
 mysqli_close($mysqli);
 ?>
 </div>
-<?php
-         $path = './';
-         $page = 'Home';
-         include $path . '../inc/footer.php';
-    ?>
+
 </body>
 </html>

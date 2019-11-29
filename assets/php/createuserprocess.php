@@ -56,7 +56,7 @@ require $path . '../../dbconnect.inc';
     $email = test_input($_POST['email']);
 	$role = test_input($_POST['role']);
 	$hashedpass = password_hash($password1, PASSWORD_BCRYPT);
-    $stmt = $mysqli->prepare("INSERT INTO at9148.users(userID, firstName, lastName, `password`, email, `role`) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $mysqli->prepare("INSERT INTO rmw1075.users(userID, firstName, lastName, `password`, email, `role`) VALUES (?, ?, ?, ?, ?, ?)");
 	$stmt->bind_param("ssssss", $userID, $fname, $lname, $hashedpass, $email, $role);
 	$stmt->execute();
     ?>
