@@ -1,9 +1,3 @@
-<?php
-$path = './';
-$page = 'Survey';
-include $path . '../inc/header.php';
-session_start();
-?>
 <!doctype html>
 <html lang="en">
 
@@ -14,19 +8,24 @@ session_start();
 	<script src="../js/validate.js"></script>
 </head>
 
-<body id="body">
-	<br />
-	<h1>Survey</h1>
+<body>
+<div class="content">
+		<?php
+		session_start();
+		$path = './';
+		$page = 'Help';
+		include $path . '../inc/header4.php';
+		?>
+		<div id="content" style="padding-top:1em;margin-top:5em;">
+		<h2>Please tell us about your Experience:</h2>
+
 	<form action = "../php/process.php" method = "POST" 
 		onsubmit="return validateForm();">
         
-        <div id="surveyquestion">
-			Please tell us about your Experience:
-		</div>
-        
+      
         
 <!--		All the radio buttons for the user to pick their favorite site visited-->
-        <fieldset>
+        <fieldset style="background-color:#fffbf7 ">
             <legend>Favorite Topic - Must Select one</legend>
 			<input type="radio" name="favTopic" value="lists" id="lists" onclick="off();"><label for="lists">Lists</label><br>
         	<input type="radio" name="favTopic" value="strings" id="strings" onclick="off();" ><label for = "strings">Strings</label><br>
@@ -73,32 +72,17 @@ session_start();
         <p><input id="center" type="submit" class="button" value="Submit Info"/></p>
         
     </form>
-	<script>
-		var other = document.getElementById('other_places');
-		other.style.visibility = 'hidden';
-		function otherplace(){
-			var other2 = document.getElementById('other');
-			console.log(other2.attributes);
-			if (other.checked == true) {
-				console.log("make the box visual")
-				other.style.visibility = 'visible';
-			} 
-			else{
-				other.style.visibility = 'hidden';
-			}
-		}
-		function getOther(){
-			alert('help');
-			$_POST[other_places] = document.getElementById('other_places').value;
-			var other_place = doucment.getElementById('other_places').value;
-			console.log(other_place)
-		}
-		
-		function off(){
-			var other = document.getElementById('other_places')
-			other.style.visibility = 'hidden';
-			other.value="";
-		}
-	</script>
+	</div>
+	</div>
+<?php
+         $path = './';
+         $page = 'Home';
+         include $path . '../inc/footer.php';
+    ?>
+
 </body>
+<script>
+document.getElementById("forms").style.color = "orange";
+document.getElementById("survey").style.color = "orange";
+</script>
 </html>

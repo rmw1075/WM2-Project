@@ -20,7 +20,7 @@
 		<div id="content">
 			<h2>About us</h2>
 			
-			<br><br>
+			<br>
 			<h3>Carr, Lizzy</h3>
 			<p>For this project, I wrote the content for the “learn” parts of the site and built the html files that were used to create these pages.  I also wrote the javascript files used for all the slideshows on this site, and provided user testing for it.  Additionally, I took notes at team meetings, kept track of what tasks still needed to be accomplished, and made sure the other team members stuck to the timeline we had made.
 			</p>
@@ -44,6 +44,7 @@
 			<h3>Weiss, Ryan</h3>
 			<p>My responsibility was to lead the team to completion and to be there for any support and troubleshooting along the way. I reviewed, integrated, and maintained the website repository, and fixed much of the errors we encountered. Additionally, I completed many aspects of the website, including the quiz, login/register, backend, and index page. I mainly worked on any PHP, Javascript, and SQL assignments required for the website. 
 			</p>
+			<br><br>
 		</div>
 		
 	</div>
