@@ -1,0 +1,320 @@
+/*<!-- LearnPy -->
+<!-- 11/09/2019 -->
+<!-- Css Template -->*/
+
+/*
+push to get footer to stay on bottom of page
+*/
+html, body {
+	height: 100%;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	background-color:#f9f3ed;
+}
+.content {
+	padding: 20px;
+	min-height: 100%;
+	margin: 0 auto -60px;
+}
+.footer,
+.push {
+	height: 60px;
+}
+
+/*
+Header section
+*/
+#header{
+	background-color:black;
+	color:white;
+	height:30px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	display:inline;
+}
+#header a{
+	color:white;
+	padding:1em;
+	display:inline;
+	text-decoration:none;
+	transition: color 0.2s ease;
+}
+#header a:link{
+	color:white;
+	
+}
+#header a:visited{
+	color:white;
+}
+#header a:hover{
+	color:orange;
+}
+#header a:active{
+	color:white;
+}
+#leftLinks{
+	padding-top:.5em;
+	padding-bottom:.25em;
+	float:left;
+}
+#rightLinks{
+	padding-top:.5em;
+	padding-bottom:.25em;
+	float:right;
+}
+
+/*Header2*/
+#mobile{
+	display:none;
+}
+#header2{
+	color:gray;
+	top:2em;
+	left:0px;
+	width:100%;
+	position:absolute;
+	
+}
+#header2 img{
+	margin-left:2em;
+	margin-top:1em;
+}
+#header2 a{
+	text-decoration:none;
+	transition: color 0.3s ease;
+}
+#header2 a:link{
+	
+	color:gray;
+}
+#header2 a:visited{
+	color:gray;
+}
+#header2 a:hover{
+	color:lightgray;
+	
+}
+#header2 a:active{
+	color:orange;
+}
+#h2Links{
+	padding:1em;
+	padding-bottom:0em;
+	display:inline;
+	text-decoration:none;
+	font-size:40px;
+}
+#h2Links a{
+	color:gray;
+	padding:1em;
+	padding-bottom:0em;
+	display:inline;
+	text-decoration:none;
+}
+
+/*
+Content Section
+*/
+#content{
+	margin-right:2em;
+	margin-left:2em;
+	margin-top:10em;
+	padding:1em;
+	
+}
+#content h2{
+	font-size:60px;
+}
+#content p{
+	font-size:25px;
+	padding-left:2em;
+}
+/*
+Footer Section
+*/
+footer{
+	background-color:black;
+	width:100%;
+	color:white;
+	height:10px;
+	display:block;
+	bottom: 0px;
+}
+#footerLinks{
+	padding-top:1em;
+	padding-bottom:.5em;
+	float:center;
+	left:42.5%;
+	position:absolute;
+}
+footer a{
+	color:white;
+	padding:1em;
+	display:inline;
+	text-decoration:none;
+	transition: color 0.2s ease;
+}
+footer a:link{
+	color:white;
+}
+footer a:visited{
+	color:white;
+}
+footer a:hover{
+	color:orange;
+}
+footer a:active{
+	color:white;
+}
+#modified {
+	margin-top: 3px;
+}
+/*
+Slideshows
+*/
+#auto1{
+	height:auto;
+	max-width:562px;
+	text-align:center;
+	display:block;
+	padding:1em;
+	position:relative;
+	left:35%;
+	
+}
+.slide img{
+	width:100%;
+	height:auto;
+}
+
+/*
+Code screen shots
+*/
+.codeScreen{
+	
+	height:auto;
+	text-align:center;
+	padding:1em;
+}
+.codeScreen img{
+	width:100%;
+	height:auto;
+}
+/*
+MEDIA QUERIES
+*/
+@media screen and (max-width: 1028px){
+	#h2Links{
+		padding-left:1em;
+	}
+	#h2Links a{
+		padding:0em;
+	}
+	#auto1{
+		left:20%;
+	}
+}
+@media screen and (max-width: 900px){
+	#mobile{
+		display:inline;
+	}
+	#desktop{
+		display:none;
+	}
+	#auto1{
+		left:15%;
+	}
+	.codeScreen{
+		padding:0;
+	}
+	
+}
+@media screen and (max-width: 635px){
+	#logo{
+		margin-left:35%;
+		margin-right:35%;
+		display:block;
+	}
+	#h2Links{
+		padding-left:0em;
+		font-size:30px;
+		display:block;
+		margin-left:22%;
+		margin-right:22%;
+		
+	}
+	#header a{
+		padding:0em;
+	}
+	#header{
+		width:100%;
+	}
+	#h2Links{
+		display:block;
+		padding-left:1em;
+		padding-right:0em;
+		width:100%;
+	}
+	#content{
+		margin-top:11em;
+		margin-right:.5em;
+		margin-left:.5em;
+	}
+	#content p{
+		font-size:25px;
+		padding-left:.5em;
+	}
+	#leftLinks{
+		padding-left:1em;
+	}
+	#footerLinks{
+		left:35%;
+	}
+	#auto1{
+		left:5%;
+	}
+}
+@media screen and (max-width: 500px){
+	#h2Links{
+		margin-left:6%;
+		margin-right:10%;
+		font-size:25px;
+		
+	}
+	#logo{
+		margin-left:20%;
+		margin-right:20%;
+		display:block;
+	}
+	#footerLinks{
+		left:15%;
+	}
+	#header{
+		height:60px;
+	}
+	#header2{
+		top:3.5em;
+	}
+	#leftLinks{
+		margin-left:15%;
+
+	}
+	#rightLinks{
+		margin-right:20%;
+	
+	}	
+	#content{
+		margin-top:15em;
+		margin-right:.1em;
+		margin-left:.1em;
+		padding-left:0em;
+	}
+	footer{
+		height:60px;
+	}
+	#auto1{
+		left:0%;
+	}
+}
