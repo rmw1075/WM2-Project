@@ -28,9 +28,6 @@
 	<?php
          include $path . '../inc/footer.php';
          mysqli_close($mysqli);
+		 echo "<script>document.getElementById(\"loops\").style.color = \"orange\";document.getElementById(\"learn\").style.color = \"orange\";</script>";
     ?>
-<script>
-document.getElementById("loops").style.color = "orange";
-document.getElementById("learn").style.color = "orange";
-</script>
 

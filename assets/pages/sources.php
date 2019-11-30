@@ -26,8 +26,6 @@
          
          include $path . '../inc/footer.php';
 	 mysqli_close($mysqli);
+	 echo "<script>document.getElementById(\"sources\").style.color = \"orange\";</script>";
     ?>
-<script>
-document.getElementById("sources").style.color = "orange";
 
-</script>

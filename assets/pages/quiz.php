@@ -87,4 +87,5 @@ else {
 
 
 include $path . '../inc/footer.php';
+echo "<script>document.getElementById(\"quiz\").style.color = \"orange\";</script>";
 ?>

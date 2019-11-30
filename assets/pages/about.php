@@ -55,6 +55,7 @@
          $path = './';
          $page = 'Home';
          include $path . '../inc/footer.php';
+		 echo "<script>document.getElementById(\"about\").style.color = \"orange\";</script>";
     ?>
 </body>
 </html>

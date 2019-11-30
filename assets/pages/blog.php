@@ -77,7 +77,7 @@ input[type=submit]:hover{
 
 		$path = './';
 		$page = 'Help';
-		include $path . '../inc/header4.php';
+		include $path . '../inc/header3.php';
 		?>
 	<div id="content">
 	<div id="formContainer">
@@ -122,11 +122,7 @@ input[type=submit]:hover{
          $path = './';
          $page = 'Home';
          include $path . '../inc/footer.php';
+		 echo "<script>document.getElementById(\"blog\").style.color = \"orange\";</script>";
     ?>
-</body>
-<script>
-document.getElementById("forms").style.color = "orange";
-document.getElementById("blog").style.color = "orange";
-</script>
-</html>
+
 
