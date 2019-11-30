@@ -23,21 +23,18 @@ if ($mysqli) {
 			$stmt->execute();
 			$stmt->close();
 			$_SESSION["survey"] = true;
+			$userID = $_SESSION["userID"];
+			$name = $_SESSION["name"];
+			$dest_email = "rmw1075@g.rit.edu";
+			$email_subject = "LearnPy Survey answers for $name";
+			$email_body = "Name: $userID \n";
+			$email_body .= "Favorite Topic: $favTopic \n";
+			$email_body .= "Quiz Rating: $quizrate \n";
+			$email_body .= "Overall Experiance: $rate \n";
+			mail($dest_email, $email_subject, $email_body);
 	  	}//end of if to make sure data is sent using $_GET
       }//end of isset
 	}
-
-
-
-
-
-//$email_body = "Visitor name: $name \n";
-//$email_body .= "Group size: $groupNum \n";
-//$email_body .= "Date visited: $visitDate \n";
-//$email_body .= "Favorite topic: $topic \n";
-//$email_body .= "Rating --> $rate \n";
-//mail($dest_email, $email_subject, $email_body);
-//echo "Email data sent";
 ?>
 
 <!DOCTYPE html>

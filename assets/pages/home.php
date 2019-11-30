@@ -9,12 +9,11 @@ session_start();
             <?php
             $path = './';
             $page = 'Home';
-            include $path . '../inc/header2.php';
+            include $path . '../inc/header5.php';
             ?>
-            
             <?php
             require $path.'../../dbConnect.inc';           
-		$sql = "SELECT content FROM modularSite where page='$page'";
+		$sql = "SELECT content FROM modularSite where `page` = '$page'";
 		$result = $mysqli->query($sql);
 
 		if($result->num_rows > 0){

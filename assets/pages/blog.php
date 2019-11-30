@@ -30,6 +30,10 @@ if ($mysqli) {
 	<title>Blog</title>
 </head>
 <style>
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -81,10 +85,12 @@ input[type=submit]:hover{
 		?>
 	<div id="content">
 	<div id="formContainer">
-	   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" methon="POST" class="form" onsubmit="return validateForm();">
+	   <form name="blogForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" methon="POST" class="form" onsubmit="return validateForm();">
 
 			
 			<h3>Comment Form:</h3>
+			<div id="alerts">
+			</div>
 			<input type="text" id="name" name="name" placeholder="Name">	
 			<input type="text" id="comment" name="comment" placeholder="Comment">
 

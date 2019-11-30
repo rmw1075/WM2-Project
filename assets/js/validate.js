@@ -96,4 +96,45 @@ function validateRegister() {
     status = false
   }
   return status;
+};
+
+function validateForm() {
+  const alerts = document.getElementById("alerts");
+  var name = document.forms["blogForm"]["name"].value;
+  var comment = document.forms["blogForm"]["comment"].value;
+  var blank = false;
+  var status = true;
+
+  while (alerts.firstChild) {
+    alerts.removeChild(alerts.firstChild);
+  }
+
+  if (name == "") {
+    document.getElementById("name").style.border = "1px solid red";
+    blank = true;
+  } else {
+    document.getElementById("name").style.border = "none";
+  }
+
+  if (comment == "") {
+    document.getElementById("comment").style.border = "1px solid red";
+    blank = true;
+  } else {
+    document.getElementById("comment").style.border = "none";
+  }
+
+  if (blank) {
+    var div = document.createElement("div");
+    div.className = "danger";
+    var p = document.createElement("p");
+    p.innerText = "Please fill in all fields";
+    div.appendChild(p);
+    alerts.appendChild(div);
+  }
+
+  if (blank) {
+    status = false;
+  }
+
+  return status;
 }

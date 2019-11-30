@@ -10,6 +10,7 @@ $page = 'Register';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <link rel="stylesheet" type="text/css" href="../css/template.css" />
+    <link rel="stylesheet" type="text/css" href="../css/register.css" />
     <script src="../js/validate.js"></script>
     <title>Create User</title>
 	<style>
@@ -35,11 +36,11 @@ $page = 'Register';
 		width:50%;
 		padding:.5em;
 		box-sizing: border-box;
-		background-color: #fffbf7;
+    background-color: #fffbf7;
 		#content{
 			margin-top:5em;
 		}
-	}
+  
 	</style>
 </head>
 <body>
@@ -68,6 +69,8 @@ $page = 'Register';
       <input type="submit" name="submit" value="Submit" />
     </form>
 </div>
+</div>
+<div id="spacer" style="height: 40px;">
 </div>
 <?php
          $path = './';
