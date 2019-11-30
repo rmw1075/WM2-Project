@@ -9,14 +9,14 @@
 </head>
 
 <body>
-<div class="content">
+ <div class="content"> 
 		<?php
 		session_start();
 		$path = './';
 		$page = 'Help';
 		include $path . '../inc/header4.php';
 		?>
-		<div id="content" style="padding-top:1em;margin-top:5em;">
+	<div id="content" style="padding-top:1em;margin-top:5em;"> 
 		<h2>Please tell us about your Experience:</h2>
 
 	<form action = "../php/process.php" method = "POST" 
@@ -72,12 +72,14 @@
         <p><input id="center" type="submit" class="button" value="Submit Info"/></p>
         
     </form>
-	</div>
-	</div>
+	</div>   
+	</div>   
 <?php
          $path = './';
          $page = 'Home';
          include $path . '../inc/footer.php';
-	 echo "<script>document.getElementById(\"survey\").style.color = \"orange\";</script>";
+		
     ?>
-
+<script>
+document.getElementById("survey").style.color = "orange";
+</script>
