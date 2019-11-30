@@ -426,6 +426,20 @@ INSERT INTO `modularSite` (`id`,`page`, `content`) VALUES
     <td><img alt="Import Example" title="Import Example" src="../images/codeImages/import.png">
 
   </tr>
+                                 
+<tr>
+    <td style="border: none;">
+        <h3>Content Resources: </h3>
+        
+        <ul>
+            <li>https://www.w3schools.com/python/python_conditions.asp</li>
+            <li>https://www.w3schools.com/python/python_while_loops.asp</li>
+            <li>https://www.w3schools.com/python/python_for_loops.asp</li>
+            <li>https://www.w3schools.com/python/python_syntax.asp</li>
+            <li>https://www.digitalocean.com/community/tutorials/how-to-import-modules-in-python-3</li>
+        </ul>    
+    </td>
+</tr>
    
     
     
