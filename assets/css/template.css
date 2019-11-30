@@ -357,4 +357,21 @@ MEDIA QUERIES
     text-decoration: none;
     text-transform: uppercase;
     color: cadetblue;
+}
+
+table img{
+    width: 167px;
+    height: 125px;
+    
+}
+
+table, td {
+    border: 1px #ccc solid;
+    
+}
+
+table{
+    margin-bottom: 40px;
+    column-width: 80x;
+}
 
