@@ -25,6 +25,7 @@
 <?php
          
          include $path . '../inc/footer.php';
+	 mysqli_close($mysqli);
     ?>
 <script>
 document.getElementById("sources").style.color = "orange";
