@@ -1,6 +1,21 @@
-<link rel="stylesheet" type="text/css" href="../css/template.css" />
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title><?php echo $page; ?></title>
+        <link rel="stylesheet" type="text/css" href="../css/template.css" />
+        <link rel="stylesheet" type="text/css" href="../css/swipe css.css" />
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	    <script  src="../js/swipeslideshow1.js"></script>
+        <script  src="../js/autoslideshow1.js"></script>
+    </head>
+
+    
+    <body>
+<div class="content">
 <div id="header">
+    
     <div id="leftLinks">
         <a href="../pages/learn.php" id="learn">Learn</a>
         |
@@ -10,11 +25,11 @@
                 echo "<a href=\"../pages/quiz.php\" id=\"quiz\">Quiz</a>|";
             }
             if ($_SESSION["survey"] == false) {
-                echo "<a href=\"../pages/survey.php\">Survey</a>|";
+                echo "<a href=\"../pages/survey.php\" id=\"survey\">Survey</a>|";
             }
         }
         ?>
-        <a href="../pages/blog.php">Blog</a>
+        <a href="../pages/blog.php" id="blog">Blog</a>
         |
         <a href="../pages/about.php" id="about">About Us</a>
     </div><!-- End of leftLinks -->
@@ -51,3 +66,4 @@
         <a href="../pages/syntax.php" id="syntax">Syntax</a>
     </div><!-- End of h2Links -->
 </div><!-- End of header2 -->
+<div id="content">
