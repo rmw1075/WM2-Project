@@ -24,9 +24,8 @@
 		
 
 	<?php
-         $path = './';
-         $page = 'Home';
          include $path . '../inc/footer.php';
+	 mysqli_close($mysqli);
     ?>
 <script>
 document.getElementById("data").style.color = "orange";
