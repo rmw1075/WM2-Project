@@ -78,6 +78,6 @@
          $path = './';
          $page = 'Home';
          include $path . '../inc/footer.php';
-		 echo "<script>document.getElementById(\"quiz\").style.color = \"survey\";</script>";
+	 echo "<script>document.getElementById(\"survey\").style.color = \"orange\";</script>";
     ?>
 
