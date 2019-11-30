@@ -1,0 +1,16 @@
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
+
+.red-border {
+    border: 1px solid red;
+}
+
+.password {
+    display: inline-block;
+}
+
+.role {
+    display: inline-block;
+}
