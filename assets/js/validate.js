@@ -72,8 +72,6 @@ function validateRegister() {
     document.getElementById("role").style.border = "none";
   }
 
-
-
   if (blank) {
     var div = document.createElement("div");
     div.className = "danger";
@@ -92,9 +90,10 @@ function validateRegister() {
     alerts.appendChild(div);
   }
 
-  if (mismatch || blank){
+  if (mismatch || blank) {
     status = false
   }
+
   return status;
 };
 
@@ -130,9 +129,75 @@ function validateForm() {
     p.innerText = "Please fill in all fields";
     div.appendChild(p);
     alerts.appendChild(div);
+    status = false;
+  }
+
+  return status;
+};
+
+function validateQuiz() {
+  const alerts = document.getElementById("alerts");
+  var status = true;
+  var blank = false;
+
+  while (alerts.firstChild) {
+    alerts.removeChild(alerts.firstChild);
+  }
+
+  var count = 0;
+  while (count < 15) {
+    var question = "option" + count;
+    var field = "fset" + count;
+    var q = document.forms["quizForm"][question].value;
+
+    if (q == "") {
+      document.getElementById(field).style.border = "1px solid red";
+      blank = true;
+    } else {
+      document.getElementById(field).style.border = "none";
+    }
+
+    count = count + 1;
   }
 
   if (blank) {
+    var div = document.createElement("div");
+    div.className = "danger";
+    var p = document.createElement("p");
+    p.innerText = "Please fill in all fields";
+    div.appendChild(p);
+    alerts.appendChild(div);
+    status = false;
+  }
+
+  return status;
+};
+
+function validateSurvey() {
+  const alerts = document.getElementById("alerts");
+  var status = true;
+  var blank = false;
+
+  while (alerts.firstChild) {
+    alerts.removeChild(alerts.firstChild);
+  }
+
+  var favTopic = document.forms["surveyForm"]["favTopic"].value;
+
+  if (favTopic == "") {
+    document.getElementById("favTopic").style.border = "1px solid red";
+    blank = true;
+  } else {
+    document.getElementById("favTopic").style.border = "none";
+  }
+
+  if (blank) {
+    var div = document.createElement("div");
+    div.className = "danger";
+    var p = document.createElement("p");
+    p.innerText = "Please fill in all fields";
+    div.appendChild(p);
+    alerts.appendChild(div);
     status = false;
   }
 
