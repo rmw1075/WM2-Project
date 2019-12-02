@@ -1,6 +1,7 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!-- LearnPy, Friday November 9 2019 -->
 <html lang="en">
+
 <head>
 	<title>Template</title>
 	<meta charset="utf-8" />
@@ -22,14 +23,12 @@
 				|
 				<a href="">About Us</a>
 			</div><!-- End of leftLinks -->
-			
 			<div id="rightLinks">
 				<a href="">Log-in</a>
 				|
 				<a href="">Sign-up</a>
 			</div><!-- End of rightLinks -->
 		</div><!-- End of header -->
-		
 		<div id="header2">
 			<a href="home.html">
 				<img id="desktop" src="black_h_lpy.png" alt="Logo">
@@ -47,14 +46,14 @@
 		<div id="content">
 			<h2>Template</h2>
 			<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-			do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-			ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-			Duis aute irure dolor in reprehenderit in voluptate velit
-			esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-			occaecat cupidatat non proident, sunt in culpa qui officia
-			deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				do eiusmod tempor incididunt ut labore et dolore magna
+				aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+				ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				Duis aute irure dolor in reprehenderit in voluptate velit
+				esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+				occaecat cupidatat non proident, sunt in culpa qui officia
+				deserunt mollit anim id est laborum.
 			</p>
 		</div><!-- End of content -->
 	</div>
@@ -65,7 +64,6 @@
 			|
 			<a href="">More</a>
 		</div><!-- End of footerLinks -->
-		
 	</footer><!-- End of footer -->
 </body>
 

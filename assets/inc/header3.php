@@ -6,15 +6,15 @@
         |
         <?php
         if ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == true)) {
-            if (strcmp($_SESSION["role"], "Student") == 0){
+            if (strcmp($_SESSION["role"], "Student") == 0) {
                 echo "<a href=\"../pages/quiz.php\" id=\"quiz\">Quiz</a>|";
             }
             if ($_SESSION["survey"] == false) {
-                echo "<a href=\"../pages/survey.php\">Survey</a>|";
+                echo "<a href=\"../pages/survey.php\" id=\"survey\">Survey</a>|";
             }
         }
         ?>
-        <a href="../pages/blog.php">Blog</a>
+        <a href="../pages/blog.php" id="blog">Blog</a>
         |
         <a href="../pages/about.php" id="about">About Us</a>
     </div><!-- End of leftLinks -->
@@ -23,16 +23,16 @@
         <?php
         if (isset($_SESSION["loggedin"]) && ($_SESSION["loggedin"] == true)) {
             echo "Hi " . $_SESSION["name"] . "! |";
-            if (strcmp($_SESSION["role"], "Instructor") == 0){
+            if (strcmp($_SESSION["role"], "Instructor") == 0) {
                 echo "<a href=\"../php/instructor.php\">View Scores</a>|";
             } else {
-								if($_SESSION["quiz"] == true) {
-                	echo "<a href=\"../php/results.php\">View Your Scores</a>|";
+                if ($_SESSION["quiz"] == true) {
+                    echo "<a href=\"../php/results.php\">View Your Scores</a>|";
                 }
             }
             echo "<a href=\"../php/logout.php\">Logout</a>";
         } else {
-            echo"<a href=\"../php/login.php\">Login</a>";
+            echo "<a href=\"../php/login.php\">Login</a>";
         }
         ?>
     </div><!-- End of rightLinks -->
