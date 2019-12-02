@@ -11,15 +11,15 @@ setInterval(runit, 2800);
 var x = 1
 
 //function runit, runs slideshow when called
-function runit(){
+function runit() {
     //set image to the next picture in the array
     document.getElementById('auto1_slideshow').src = imageArray[x];
-    
+
     //increase the count in "x" to advance to next image
     x++;
-    
+
     //loops back to the first image if it reaches the end
-    if (x === arrayLength){
-        x=0;
+    if (x === arrayLength) {
+        x = 0;
     }
 }

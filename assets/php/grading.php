@@ -50,4 +50,3 @@ if (mysqli_connect_errno()) {
 		$_SESSION["quiz"] = true;
 		$_SESSION["result"] = $_SESSION["userID"];
     header("location: ./results.php");
-?>
