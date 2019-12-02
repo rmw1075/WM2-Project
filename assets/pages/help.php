@@ -29,7 +29,6 @@
 			<h3>Love, Kyrren</h3>
 			<p>
 			</p>
-
 			<br><br>
 			<h3>Mathur, Sagar</h3>
 			<p>For this project, I was responsible to make one of the two sample index pages and also for the html and css code for the pages. I got together the learning pages by merging the template html and css with the content for these pages. I was mainly responsible for making the four learning pages and the resources page modular by using myphp admin to create tables and populate them with content. I also designed and coded the resources page for our website.

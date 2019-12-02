@@ -12,7 +12,6 @@ function test_input($data)
 	return $data;
 }
 
-
 if ($mysqli) {
 	if (isset($_POST['favTopic']) && isset($_POST['quizrate'])  && isset($_POST['rate'])) {
 		if ($_POST['favTopic'] != '' && $_POST['quizrate'] != '' && $_POST['rate'] != '') {

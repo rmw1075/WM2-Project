@@ -23,14 +23,12 @@
 				|
 				<a href="">About Us</a>
 			</div><!-- End of leftLinks -->
-
 			<div id="rightLinks">
 				<a href="">Log-in</a>
 				|
 				<a href="">Sign-up</a>
 			</div><!-- End of rightLinks -->
 		</div><!-- End of header -->
-
 		<div id="header2">
 			<a href="home.html">
 				<img id="desktop" src="black_h_lpy.png" alt="Logo">
@@ -66,7 +64,6 @@
 			|
 			<a href="">More</a>
 		</div><!-- End of footerLinks -->
-
 	</footer><!-- End of footer -->
 </body>
 

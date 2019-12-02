@@ -21,18 +21,17 @@
 		?>
 		<div id="content">
 			<h2>About us</h2>
-
+			
 			<br>
 			<h3>Carr, Lizzy</h3>
-			<p>For this project, I wrote the content for the “learn” parts of the site and built the html files that were used to create these pages. I also wrote the javascript files used for all the slideshows on this site, and provided user testing for it. Additionally, I took notes at team meetings, kept track of what tasks still needed to be accomplished, and made sure the other team members stuck to the timeline we had made.
+			<p>For this project, I wrote the content for the “learn” parts of the site and built the html files that were used to create these pages.  I also wrote the javascript files used for all the slideshows on this site, and provided user testing for it.  Additionally, I took notes at team meetings, kept track of what tasks still needed to be accomplished, and made sure the other team members stuck to the timeline we had made.
 			</p>
-
+			
 			<br><br>
 			<h3>Love, Kyrren</h3>
 			<p>
-				For this project, I wrote the Python programs used for examples on the learn pages. I also helped start the outline of what the content on the pages would include for each topic. I helped write some of the quiz questions into a csv format that was used to get loaded into the database. I also helped with putting together the blog and survey for the site.
 			</p>
-
+			
 			<br><br>
 			<h3>Mathur, Sagar</h3>
 			<p>For this project, I was responsible to make one of the two sample index pages and also for the html and css code for the pages. I got together the learning pages by merging the template html and css with the content for these pages. I was mainly responsible for making the four learning pages and the resources page modular by using myphp admin to create tables and populate them with content. I also designed and coded the resources page for our website.
