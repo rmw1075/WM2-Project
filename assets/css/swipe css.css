@@ -1,5 +1,6 @@
 /*Styling slidehow container */
-.swipe-slideshow1{
+
+.swipe-slideshow1 {
     position: relative;
     vertical-align: middle;
     align-content: center;
@@ -10,8 +11,9 @@
 }
 
 /*Hide images not being displayed */
-.mySlides{
-    padding:0px;
+
+.mySlides {
+    padding: 0px;
     display: none;
     text-align: center;
     margin: 0px auto;
@@ -20,9 +22,9 @@
     /*border: solid 3px red;*/
 }
 
-
 /* Buttons to move through images */
-.previous, .next{
+
+.previous, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -38,58 +40,47 @@
 }
 
 /* position the "next" button in the correct spot */
-.next{
+
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
 /* add a hover feature to the previous/next buttons */
-.previous:hover, .next:hover{
-    background-color: rgba(0,0,0,0.8);
+
+.previous:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-/* dots to show what image you're one 
-.dot{
-    cursor: pointer;
-    height: .5em;
-    width: .5em;
-    margin: 0 2em;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.5s ease;
-}*/
-
-/* currently selected image dot 
-.active .dot:hover{
-    background-color: #2e2e1f;
-}*/
-
 /* Animation to fade into each image */
-.fade{
+
+.fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade{
-    from {opacity: .5}
-    to {opacity: 1}
+@-webkit-keyframes fade {
+    from {
+        opacity: .5
+    }
+    to {
+        opacity: 1
+    }
 }
 
-@keyframes fade{
-    from {opacity: .5}
-    to {opacity: 1}
+@keyframes fade {
+    from {
+        opacity: .5
+    }
+    to {
+        opacity: 1
+    }
 }
 
-
-@media screen and (max-width: 900px){
-	.swipe-slideshow1{
-   
-    width: 90%;
-   
-}
-	
+@media screen and (max-width: 900px) {
+    .swipe-slideshow1 {
+        width: 90%;
+    }
 }

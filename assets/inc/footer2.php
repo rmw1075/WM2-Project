@@ -1,8 +1,11 @@
+</div>
+
 </div><!-- End of content ID (started in headers) -->
 </div><!-- End of content CLASS (started in headers) -->
+
 <footer class="footer">
 	<div id="footerLinks">
-		<a href="../pages/sources.php" id="sources">Resources</a><br>
+		<a href="../pages/sources.php">Resources</a><br>
 		<div id="modified">
 			<?php
 			$filename = './../inc/footer.php';

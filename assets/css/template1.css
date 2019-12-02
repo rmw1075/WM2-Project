@@ -5,6 +5,7 @@
 /*
 push to get footer to stay on bottom of page
 */
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -204,14 +205,12 @@ Slideshows
 
 #auto1 {
 	height: auto;
-	width: 50%;
 	max-width: 562px;
 	text-align: center;
 	display: block;
 	padding: 1em;
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	left: 35%;
 }
 
 .slide img {
@@ -246,7 +245,7 @@ MEDIA QUERIES
 		padding: 0em;
 	}
 	#auto1 {
-		width: 75%;
+		left: 20%;
 	}
 }
 
@@ -258,7 +257,7 @@ MEDIA QUERIES
 		display: none;
 	}
 	#auto1 {
-		width: 80%;
+		left: 15%;
 	}
 	.codeScreen {
 		padding: 0;
@@ -306,7 +305,7 @@ MEDIA QUERIES
 		left: 35%;
 	}
 	#auto1 {
-		width: 90%;
+		left: 5%;
 	}
 }
 
@@ -346,6 +345,57 @@ MEDIA QUERIES
 		height: 60px;
 	}
 	#auto1 {
-		width: 95%;
+		left: 0%;
 	}
+}
+
+/*References Page */
+
+.refitem {
+	width: 100%;
+}
+
+.refitem div {
+	width: 24%;
+	float: left;
+	vertical-align: middle;
+	min-height: 125px;
+	border: solid #ccc 1px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.refitem div:nth-child(1) {
+	font-size: 12px;
+}
+
+.refitem div:nth-child(3) {
+	width: 44%;
+}
+
+.refitem div:nth-child(3) p {
+	float: left;
+	width: 60%;
+}
+
+.refitem div img {
+	height: 125px;
+	float: right !important;
+	width: 167px;
+}
+
+.contentbody {
+	margin: 50px;
+	padding-top: 50px;
+}
+
+#source {
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+#content p a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: cadetblue;
 }

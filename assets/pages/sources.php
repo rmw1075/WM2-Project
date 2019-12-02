@@ -1,15 +1,13 @@
-
-	
 <?php
 session_start();
 $path = './';
-$page = 'Syntax';
+$page = 'Resources';
 include $path . '../inc/header2.php';
 ?>
-
+    
 <?php
 require $path . '../../dbConnect.inc';
-$sql = "SELECT content FROM modularSite where `page`='$page'";
+$sql = "SELECT content FROM modularSite where page='$page'";
 $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
@@ -26,6 +24,6 @@ if ($result->num_rows > 0) {
 <?php
 include $path . '../inc/footer.php';
 mysqli_close($mysqli);
-echo "<script>document.getElementById(\"syntax\").style.color = \"orange\";document.getElementById(\"learn\").style.color = \"orange\";</script>";
+echo "<script>document.getElementById(\"sources\").style.color = \"orange\";</script>";
 ?>
 
